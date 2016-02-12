@@ -2428,6 +2428,16 @@ design rules under a new name.</description>
 <contactref element="J3_VOICE" pad="2"/>
 <wire x1="-5.08" y1="-7.62" x2="34.798" y2="30.48" width="0" layer="19" extent="1-1"/>
 </signal>
+<signal name="N$10">
+<contactref element="U1" pad="12"/>
+<contactref element="J3_VOICE" pad="5"/>
+<wire x1="2.54" y1="-7.62" x2="34.798" y2="27.94" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$16">
+<contactref element="U1" pad="15"/>
+<contactref element="J3_VOICE" pad="6"/>
+<wire x1="5.08" y1="-7.62" x2="42.418" y2="22.86" width="0" layer="19" extent="1-1"/>
+</signal>
 </signals>
 </board>
 </drawing>
