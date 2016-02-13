@@ -1,14 +1,32 @@
 #include <MIDI.h>
 #include "AH_MCP4922.h"
 
-#define LED 13   		    // LED pin on Arduino Uno
+#define GATE_PIN 4
 
-#define GATE_PIN 3
-#define VELOCITY_PIN 6
-#define PWM_OUT_PIN 5
+#define ENV_MOD_PIN 3
+#define ENV_MOD_CTRL
 
-AH_MCP4922 AnalogOutput1(10,11,12,LOW,LOW);
-AH_MCP4922 AnalogOutput2(10,11,12,HIGH,LOW);
+#define CUTOFF_PIN 5
+#define CUTOFF_CTRL
+
+#define SAW_PIN 6
+#define SAW_CTRL
+#define SQR_PIN 9
+#define SQR_CTRL
+
+#define SLIDE_IN_PIN 13
+#define SLIDE_OUT_PIN 12
+#define SLIDE_CTRL
+
+#define DECAY_PIN 11
+#define DECAY_CTRL
+
+#define ACCENT_PIN 10
+#define ACCENT_CTRL
+
+
+AH_MCP4922 PitchDac(A1,A2,A3,LOW,LOW);
+AH_MCP4922 CutoffDac(A1,A2,A3,HIGH,LOW);
 
 int liveNoteCount = 0;
 int pitchbendOffset = 0;
@@ -16,13 +34,10 @@ int baseNoteFrequency;
 
 MIDI_CREATE_DEFAULT_INSTANCE();
 
-byte selectedChannel = 17;
+byte selectedChannel;
 
 void handleNoteOn(byte channel, byte pitch, byte velocity)
 {
-  if (selectedChannel == 17) {
-    selectedChannel = channel;
-  }
   else if (channel != selectedChannel) {
     return;
   }
@@ -30,7 +45,7 @@ void handleNoteOn(byte channel, byte pitch, byte velocity)
   liveNoteCount++;
   
   baseNoteFrequency = (pitch - 12) * 42;
-  AnalogOutput1.setValue(baseNoteFrequency + pitchbendOffset);
+  PitchDac.setValue(baseNoteFrequency + pitchbendOffset);
   AnalogOutput2.setValue(velocity * 32);
 
   digitalWrite(GATE_PIN, HIGH);
@@ -66,7 +81,7 @@ void handlePitchBend(byte channel, int bend)
 {
   pitchbendOffset = bend >> 4;
 
-  AnalogOutput1.setValue(baseNoteFrequency + pitchbendOffset);
+  PitchDac.setValue(baseNoteFrequency + pitchbendOffset);
 }
 
 
