@@ -17250,8 +17250,6 @@ NS Package M08A</description>
 <wire x1="63.5" y1="106.68" x2="76.2" y2="106.68" width="0.1524" layer="91"/>
 <pinref part="U1" gate="G$1" pin="PC1(ADC1)"/>
 <wire x1="43.18" y1="71.12" x2="63.5" y2="71.12" width="0.1524" layer="91"/>
-<wire x1="63.5" y1="71.12" x2="63.5" y2="68.58" width="0.1524" layer="91"/>
-<junction x="63.5" y="71.12"/>
 </segment>
 </net>
 <net name="N$30" class="0">

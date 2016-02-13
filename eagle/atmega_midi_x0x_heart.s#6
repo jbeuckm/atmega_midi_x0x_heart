@@ -16967,7 +16967,7 @@ NS Package M08A</description>
 <instance part="J2_SEQ" gate="-6" x="58.42" y="20.32"/>
 <instance part="GND11" gate="1" x="88.9" y="30.48"/>
 <instance part="MIDI_IN" gate="-1" x="-22.86" y="111.76" rot="MR0"/>
-<instance part="MIDI_IN" gate="-2" x="-22.86" y="101.6" rot="MR0"/>
+<instance part="MIDI_IN" gate="-2" x="-22.86" y="109.22" rot="MR0"/>
 </instances>
 <busses>
 </busses>
@@ -17012,7 +17012,9 @@ NS Package M08A</description>
 <pinref part="D1" gate="G$1" pin="A"/>
 <wire x1="7.62" y1="101.6" x2="5.08" y2="101.6" width="0.1524" layer="91"/>
 <wire x1="5.08" y1="101.6" x2="5.08" y2="104.14" width="0.1524" layer="91"/>
-<wire x1="-20.32" y1="101.6" x2="5.08" y2="101.6" width="0.1524" layer="91"/>
+<wire x1="-20.32" y1="109.22" x2="0" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="0" y1="109.22" x2="0" y2="101.6" width="0.1524" layer="91"/>
+<wire x1="0" y1="101.6" x2="5.08" y2="101.6" width="0.1524" layer="91"/>
 <junction x="5.08" y="101.6"/>
 <pinref part="MIDI_IN" gate="-2" pin="S"/>
 </segment>
