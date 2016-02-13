@@ -16940,9 +16940,9 @@ NS Package M08A</description>
 <instance part="P+5" gate="1" x="139.7" y="35.56"/>
 <instance part="GND6" gate="1" x="147.32" y="10.16"/>
 <instance part="C8" gate="G$1" x="147.32" y="25.4"/>
-<instance part="MIDI_CH" gate="G$1" x="55.88" y="73.66" rot="MR0"/>
-<instance part="P+3" gate="1" x="55.88" y="86.36"/>
-<instance part="GND7" gate="1" x="55.88" y="60.96"/>
+<instance part="MIDI_CH" gate="G$1" x="55.88" y="88.9" rot="MR0"/>
+<instance part="P+3" gate="1" x="55.88" y="104.14"/>
+<instance part="GND7" gate="1" x="55.88" y="76.2"/>
 <instance part="C4" gate="G$1" x="91.44" y="71.12"/>
 <instance part="GND8" gate="1" x="83.82" y="55.88"/>
 <instance part="P+4" gate="1" x="83.82" y="86.36"/>
@@ -17077,7 +17077,7 @@ NS Package M08A</description>
 <segment>
 <pinref part="P+3" gate="1" pin="+5V"/>
 <pinref part="MIDI_CH" gate="G$1" pin="E"/>
-<wire x1="55.88" y1="81.28" x2="55.88" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="55.88" y1="96.52" x2="55.88" y2="101.6" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$29" class="0">
@@ -17159,7 +17159,7 @@ NS Package M08A</description>
 <segment>
 <pinref part="GND7" gate="1" pin="GND"/>
 <pinref part="MIDI_CH" gate="G$1" pin="A"/>
-<wire x1="55.88" y1="66.04" x2="55.88" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="55.88" y1="81.28" x2="55.88" y2="78.74" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="+12V" class="0">
@@ -17305,6 +17305,8 @@ NS Package M08A</description>
 <segment>
 <pinref part="MIDI_CH" gate="G$1" pin="S"/>
 <pinref part="U1" gate="G$1" pin="PC0(ADC0)"/>
+<wire x1="50.8" y1="88.9" x2="50.8" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="50.8" y1="76.2" x2="50.8" y2="73.66" width="0.1524" layer="91"/>
 <wire x1="50.8" y1="73.66" x2="43.18" y2="73.66" width="0.1524" layer="91"/>
 </segment>
 </net>

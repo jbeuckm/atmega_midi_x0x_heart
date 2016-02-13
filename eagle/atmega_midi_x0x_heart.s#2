@@ -16895,8 +16895,8 @@ NS Package M08A</description>
 <plain>
 <text x="73.66" y="35.56" size="1.778" layer="91">square</text>
 <text x="73.66" y="38.1" size="1.778" layer="91">saw</text>
-<text x="73.66" y="43.18" size="1.778" layer="91">cutoff</text>
-<text x="73.66" y="25.4" size="1.778" layer="91">env_mod</text>
+<text x="73.66" y="25.4" size="1.778" layer="91">cutoff</text>
+<text x="73.66" y="43.18" size="1.778" layer="91">env_mod</text>
 <text x="73.66" y="15.24" size="1.778" layer="91">slide_in</text>
 <text x="73.66" y="17.78" size="1.778" layer="91">slide_out</text>
 <text x="73.66" y="20.32" size="1.778" layer="91">decay</text>
@@ -16955,8 +16955,8 @@ NS Package M08A</description>
 <instance part="J3_VOICE" gate="-2" x="58.42" y="38.1"/>
 <instance part="J3_VOICE" gate="-3" x="96.52" y="40.64"/>
 <instance part="J3_VOICE" gate="-4" x="96.52" y="38.1"/>
-<instance part="J3_VOICE" gate="-5" x="58.42" y="43.18"/>
-<instance part="J3_VOICE" gate="-6" x="58.42" y="25.4"/>
+<instance part="J3_VOICE" gate="-5" x="58.42" y="25.4"/>
+<instance part="J3_VOICE" gate="-6" x="58.42" y="43.18"/>
 <instance part="J2_SEQ" gate="-1" x="58.42" y="15.24"/>
 <instance part="J2_SEQ" gate="-2" x="58.42" y="17.78"/>
 <instance part="J2_SEQ" gate="-3" x="96.52" y="35.56" smashed="yes">
@@ -17376,20 +17376,6 @@ NS Package M08A</description>
 <wire x1="55.88" y1="38.1" x2="43.18" y2="38.1" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$16" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="PB1(OC1A)"/>
-<pinref part="J3_VOICE" gate="-6" pin="S"/>
-<wire x1="55.88" y1="25.4" x2="43.18" y2="25.4" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$1" class="0">
-<segment>
-<pinref part="J3_VOICE" gate="-5" pin="S"/>
-<pinref part="U1" gate="G$1" pin="PD3(INT1)"/>
-<wire x1="55.88" y1="43.18" x2="43.18" y2="43.18" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="N$10" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="PD6(AIN0)"/>
@@ -17423,6 +17409,20 @@ NS Package M08A</description>
 <pinref part="U1" gate="G$1" pin="PB2(SS/OC1B)"/>
 <pinref part="J2_SEQ" gate="-6" pin="S"/>
 <wire x1="43.18" y1="22.86" x2="55.88" y2="22.86" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$1" class="0">
+<segment>
+<pinref part="J3_VOICE" gate="-6" pin="S"/>
+<pinref part="U1" gate="G$1" pin="PD3(INT1)"/>
+<wire x1="55.88" y1="43.18" x2="43.18" y2="43.18" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$16" class="0">
+<segment>
+<pinref part="U1" gate="G$1" pin="PB1(OC1A)"/>
+<pinref part="J3_VOICE" gate="-5" pin="S"/>
+<wire x1="43.18" y1="25.4" x2="55.88" y2="25.4" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
