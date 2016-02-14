@@ -31,15 +31,20 @@
 #define CTRL_RESET 121
 
 AH_MCP4922 PitchDac(A1,A2,A3,LOW,LOW);
+
+// Velocity gets assigned to the analog cutoff voltage because 
+// the PWM pins have some latency. Whatever velocity controls cannot 
+// afford latency since the note is beginning simultaneously.
 AH_MCP4922 CutoffDac(A1,A2,A3,HIGH,LOW);
 
 int liveNoteCount = 0;
 int pitchbendOffset = 0;
 int baseNoteFrequency;
 
+byte selectedChannel;
+
 MIDI_CREATE_DEFAULT_INSTANCE();
 
-byte selectedChannel;
 
 void handleNoteOn(byte channel, byte pitch, byte velocity)
 {  
@@ -47,11 +52,11 @@ void handleNoteOn(byte channel, byte pitch, byte velocity)
   
   baseNoteFrequency = (pitch - 12) * 42;
   PitchDac.setValue(baseNoteFrequency + pitchbendOffset);
+
   CutoffDac.setValue(velocity * 32);
 
   digitalWrite(GATE_PIN, HIGH);
   digitalWrite(GATE_LED, HIGH);
-  analogWrite(VELOCITY_PIN, 2 * velocity);
  }
 
 
@@ -73,8 +78,45 @@ void handleControlChange(byte channel, byte number, byte value)
   int scaledValue = value << 3;
   
   switch (number) {
+
     case CUTOFF_CTRL:
       analogWrite(CUTOFF_PIN, scaledValue);
+      break;
+
+    case ENV_MOD_CTRL:
+      analogWrite(ENV_MOD_PIN, scaledValue);
+      break;
+
+    case SAW_CTRL:
+      analogWrite(SAW_PIN, scaledValue);
+      break;
+
+    case SQR_CTRL:
+      analogWrite(SQR_PIN, scaledValue);
+      break;
+
+    case DECAY_CTRL:
+      analogWrite(DECAY_PIN, scaledValue);
+      break;
+
+    case ACCENT_CTRL:
+      analogWrite(ACCENT_PIN, scaledValue);
+      break;
+
+    case SLIDE_CTRL:
+      if (value >= 64) {
+        digitalWrite(SLIDE_IN_PIN, HIGH);
+        digitalWrite(SLIDE_OUT_PIN, LOW);
+      } else {
+        digitalWrite(SLIDE_IN_PIN, LOW);
+        digitalWrite(SLIDE_OUT_PIN, HIGH);
+      }
+      break;
+      
+    case ALL_NOTES_OFF:
+      liveNoteCount = 0;
+      digitalWrite(GATE_PIN, LOW);
+      digitalWrite(GATE_LED, LOW);
       break;
   }
 }
@@ -100,6 +142,30 @@ void setup()
     digitalWrite(GATE_PIN, LOW);
     pinMode(GATE_LED, OUTPUT);
     digitalWrite(GATE_LED, LOW);
+
+
+    digitalWrite(SLIDE_IN_PIN, OUTPUT);
+    digitalWrite(SLIDE_IN_PIN, LOW);
+    digitalWrite(SLIDE_OUT_PIN, OUTPUT);
+    digitalWrite(SLIDE_OUT_PIN, HIGH);
+
+    pinMode(ENV_MOD_PIN, OUTPUT);
+    digitalWrite(ENV_MOD_PIN, HIGH);
+
+    pinMode(SAW_PIN, OUTPUT);
+    digitalWrite(SAW_PIN, HIGH);
+
+    pinMode(SQR_PIN, OUTPUT);
+    digitalWrite(SQR_PIN, LOW);
+
+    pinMode(CUTOFF_PIN, OUTPUT);
+    digitalWrite(CUTOFF_PIN, HIGH);
+
+    pinMode(DECAY_PIN, OUTPUT);
+    digitalWrite(DECAY_PIN, LOW);
+
+    pinMode(ACCENT_PIN, OUTPUT);
+    digitalWrite(ACCENT_PIN, LOW);
 
     delay(1000);
 
