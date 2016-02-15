@@ -75,7 +75,7 @@ void handleNoteOff(byte channel, byte pitch, byte velocity)
 
 void handleControlChange(byte channel, byte number, byte value)
 {
-  int scaledValue = value << 3;
+  int scaledValue = int(value) << 1;
   
   switch (number) {
 
@@ -168,6 +168,10 @@ void setup()
     digitalWrite(ACCENT_PIN, LOW);
 
 
+    TCCR0B = (TCCR0B & 0b11111000) | 0x01;
+    TCCR1B = (TCCR1B & 0b11111000) | 0x01;
+    TCCR2B = (TCCR2B & 0b11111000) | 0x01;
+ 
     delay(1000);
 
     playScale(selectedChannel);
