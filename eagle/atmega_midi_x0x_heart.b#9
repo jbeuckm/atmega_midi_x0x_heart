@@ -2391,17 +2391,19 @@ design rules under a new name.</description>
 <wire x1="40.64" y1="48.26" x2="37.465" y2="48.26" width="0.8128" layer="16"/>
 <wire x1="37.465" y1="48.26" x2="37.465" y2="51.435" width="0.8128" layer="16"/>
 <wire x1="37.465" y1="51.435" x2="40.005" y2="51.435" width="0.8128" layer="16"/>
-<wire x1="19.05" y1="49.53" x2="9.525" y2="46.99" width="0" layer="19" extent="1-1"/>
+<wire x1="9.525" y1="46.99" x2="19.05" y2="46.99" width="0.8128" layer="16"/>
+<wire x1="19.05" y1="46.99" x2="19.685" y2="47.625" width="0.8128" layer="16"/>
 </signal>
 <signal name="N$24">
 <contactref element="R4" pad="2"/>
 <contactref element="GATE_LED" pad="A"/>
-<wire x1="9.525" y1="49.53" x2="13.97" y2="50.8" width="0" layer="19" extent="1-1"/>
+<wire x1="13.97" y1="50.8" x2="10.795" y2="50.8" width="0.8128" layer="16"/>
+<wire x1="10.795" y1="50.8" x2="9.525" y2="49.53" width="0.8128" layer="16"/>
 </signal>
 <signal name="N$28">
 <contactref element="U1" pad="28"/>
 <contactref element="R4" pad="1"/>
-<wire x1="13.97" y1="38.1" x2="13.97" y2="40.64" width="0" layer="19" extent="1-1"/>
+<wire x1="13.97" y1="40.64" x2="13.97" y2="38.1" width="0.8128" layer="16"/>
 </signal>
 </signals>
 </board>
