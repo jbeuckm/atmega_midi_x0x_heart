@@ -4,7 +4,7 @@
 #define GATE_PIN 4
 #define GATE_LED A5
 
-#define ENV_MOD_CTRL 7
+#define ENV_MOD_CTRL 1
 #define ENV_MOD_PIN 3
 
 #define CUTOFF_CTRL 74
@@ -166,6 +166,7 @@ void setup()
 
     pinMode(ACCENT_PIN, OUTPUT);
     digitalWrite(ACCENT_PIN, LOW);
+
 
     delay(1000);
 
