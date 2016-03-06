@@ -48,6 +48,8 @@ MIDI_CREATE_DEFAULT_INSTANCE();
 
 void handleNoteOn(byte channel, byte pitch, byte velocity)
 {  
+  cli();
+  
   liveNoteCount++;
   
   baseNoteFrequency = (pitch - 12) * 42;
@@ -57,17 +59,23 @@ void handleNoteOn(byte channel, byte pitch, byte velocity)
 
   digitalWrite(GATE_PIN, HIGH);
   digitalWrite(GATE_LED, HIGH);
+
+  sei();
  }
 
 
 void handleNoteOff(byte channel, byte pitch, byte velocity)
 {
+  cli();
+  
   liveNoteCount--;
   
-  if (liveNoteCount == 0) {
+  if (liveNoteCount <= 0) {
     digitalWrite(GATE_PIN, LOW);
     digitalWrite(GATE_LED, LOW);
   }
+
+  sei();
 }
 
 
@@ -75,6 +83,8 @@ void handleNoteOff(byte channel, byte pitch, byte velocity)
 
 void handleControlChange(byte channel, byte number, byte value)
 {
+  cli();
+  
   int scaledValue = int(value) << 1;
   
   switch (number) {
@@ -96,7 +106,7 @@ void handleControlChange(byte channel, byte number, byte value)
       break;
 
     case DECAY_CTRL:
-      analogWrite(DECAY_PIN, scaledValue);
+      analogWrite(DECAY_PIN, 255 - scaledValue);
       break;
 
     case ACCENT_CTRL:
@@ -119,6 +129,8 @@ void handleControlChange(byte channel, byte number, byte value)
       digitalWrite(GATE_LED, LOW);
       break;
   }
+
+  sei();
 }
 
 
@@ -198,9 +210,9 @@ void playScale(int channel) {
   for (int i=0; i<channel; i++) {
 
       handleNoteOn(channel, note, 100);
-      delay(100);
+      delay(10000);
       handleNoteOff(channel, note, 100);
-      delay(100);
+      delay(10000);
       note++;
   }
 
