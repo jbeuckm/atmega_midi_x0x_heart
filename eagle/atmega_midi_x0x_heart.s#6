@@ -18647,6 +18647,9 @@ W = angled&lt;p&gt;
 <part name="RES_POT" library="con-lstb" deviceset="MA03-1" device=""/>
 <part name="P+9" library="supply1" deviceset="+5V" device=""/>
 <part name="GND14" library="supply1" deviceset="GND" device=""/>
+<part name="R9" library="rcl" deviceset="R-US_" device="0207/10" value="220"/>
+<part name="MIDI_OUT_THRU" library="con-lstb" deviceset="MA03-1" device=""/>
+<part name="GND15" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -18674,9 +18677,9 @@ W = angled&lt;p&gt;
 <instance part="P+1" gate="1" x="-25.4" y="91.44"/>
 <instance part="P+2" gate="1" x="35.56" y="121.92"/>
 <instance part="R5" gate="G$1" x="119.38" y="104.14"/>
-<instance part="SCALE_TRIM" gate="G$1" x="99.06" y="68.58" rot="MR180"/>
+<instance part="SCALE_TRIM" gate="G$1" x="104.14" y="68.58" rot="MR180"/>
 <instance part="R7" gate="G$1" x="147.32" y="119.38"/>
-<instance part="R8" gate="G$1" x="111.76" y="63.5"/>
+<instance part="R8" gate="G$1" x="116.84" y="63.5"/>
 <instance part="R11" gate="G$1" x="147.32" y="58.42"/>
 <instance part="P+6" gate="1" x="73.66" y="111.76"/>
 <instance part="U$4" gate="A" x="93.98" y="99.06"/>
@@ -18688,8 +18691,8 @@ W = angled&lt;p&gt;
 <instance part="C5" gate="G$1" x="132.08" y="25.4"/>
 <instance part="P+5" gate="1" x="132.08" y="35.56"/>
 <instance part="C8" gate="G$1" x="139.7" y="25.4"/>
-<instance part="MIDI_CH" gate="G$1" x="55.88" y="88.9" rot="MR0"/>
-<instance part="P+3" gate="1" x="55.88" y="104.14"/>
+<instance part="MIDI_CH" gate="G$1" x="53.34" y="88.9" rot="MR0"/>
+<instance part="P+3" gate="1" x="53.34" y="101.6"/>
 <instance part="P+4" gate="1" x="129.54" y="111.76"/>
 <instance part="P+7" gate="1" x="109.22" y="35.56"/>
 <instance part="R10" gate="G$1" x="177.8" y="93.98"/>
@@ -18715,13 +18718,13 @@ W = angled&lt;p&gt;
 <instance part="GND2" gate="1" x="20.32" y="81.28"/>
 <instance part="GND3" gate="1" x="38.1" y="86.36"/>
 <instance part="GND4" gate="1" x="73.66" y="78.74"/>
-<instance part="GND5" gate="1" x="55.88" y="76.2"/>
-<instance part="GND6" gate="1" x="106.68" y="50.8"/>
+<instance part="GND5" gate="1" x="53.34" y="76.2"/>
+<instance part="GND6" gate="1" x="111.76" y="50.8"/>
 <instance part="GND7" gate="1" x="83.82" y="22.86"/>
 <instance part="GND8" gate="1" x="139.7" y="10.16"/>
 <instance part="GND9" gate="1" x="129.54" y="66.04"/>
 <instance part="GND10" gate="1" x="185.42" y="66.04"/>
-<instance part="GND11" gate="1" x="99.06" y="50.8"/>
+<instance part="GND11" gate="1" x="104.14" y="50.8"/>
 <instance part="R4" gate="G$1" x="53.34" y="60.96"/>
 <instance part="GATE_LED" gate="G$1" x="63.5" y="60.96" rot="R90"/>
 <instance part="GND12" gate="1" x="73.66" y="50.8"/>
@@ -18735,6 +18738,9 @@ W = angled&lt;p&gt;
 <instance part="RES_POT" gate="G$1" x="88.9" y="63.5" rot="R180"/>
 <instance part="P+9" gate="1" x="81.28" y="73.66"/>
 <instance part="GND14" gate="1" x="81.28" y="50.8"/>
+<instance part="R9" gate="G$1" x="50.8" y="127"/>
+<instance part="MIDI_OUT_THRU" gate="G$1" x="71.12" y="124.46" rot="R180"/>
+<instance part="GND15" gate="1" x="63.5" y="111.76"/>
 </instances>
 <busses>
 </busses>
@@ -18829,11 +18835,16 @@ W = angled&lt;p&gt;
 <pinref part="OK1" gate="G$1" pin="VCC"/>
 <wire x1="30.48" y1="106.68" x2="35.56" y2="106.68" width="0.1524" layer="91"/>
 <wire x1="35.56" y1="106.68" x2="35.56" y2="114.3" width="0.1524" layer="91"/>
-<wire x1="35.56" y1="114.3" x2="45.72" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="35.56" y1="114.3" x2="40.64" y2="114.3" width="0.1524" layer="91"/>
 <pinref part="R3" gate="G$1" pin="2"/>
 <pinref part="P+2" gate="1" pin="+5V"/>
+<wire x1="40.64" y1="114.3" x2="45.72" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="35.56" y1="119.38" x2="35.56" y2="114.3" width="0.1524" layer="91"/>
 <junction x="35.56" y="114.3"/>
+<pinref part="R9" gate="G$1" pin="1"/>
+<wire x1="45.72" y1="127" x2="40.64" y2="127" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="127" x2="40.64" y2="114.3" width="0.1524" layer="91"/>
+<junction x="40.64" y="114.3"/>
 </segment>
 <segment>
 <pinref part="P+6" gate="1" pin="+5V"/>
@@ -18850,7 +18861,7 @@ W = angled&lt;p&gt;
 <segment>
 <pinref part="P+3" gate="1" pin="+5V"/>
 <pinref part="MIDI_CH" gate="G$1" pin="E"/>
-<wire x1="55.88" y1="96.52" x2="55.88" y2="101.6" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="96.52" x2="53.34" y2="99.06" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="U$1" gate="A" pin="VDD"/>
@@ -18916,7 +18927,7 @@ W = angled&lt;p&gt;
 <wire x1="142.24" y1="119.38" x2="119.38" y2="119.38" width="0.1524" layer="91"/>
 <wire x1="119.38" y1="119.38" x2="119.38" y2="86.36" width="0.1524" layer="91"/>
 <pinref part="SCALE_TRIM" gate="G$1" pin="S"/>
-<wire x1="104.14" y1="68.58" x2="119.38" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="68.58" x2="119.38" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="119.38" y1="68.58" x2="119.38" y2="86.36" width="0.1524" layer="91"/>
 <junction x="119.38" y="86.36"/>
 <pinref part="U2" gate="A" pin="1IN-"/>
@@ -18931,7 +18942,7 @@ W = angled&lt;p&gt;
 <wire x1="124.46" y1="63.5" x2="124.46" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="124.46" y1="81.28" x2="132.08" y2="81.28" width="0.1524" layer="91"/>
 <pinref part="R8" gate="G$1" pin="2"/>
-<wire x1="124.46" y1="63.5" x2="116.84" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="124.46" y1="63.5" x2="121.92" y2="63.5" width="0.1524" layer="91"/>
 <junction x="124.46" y="63.5"/>
 </segment>
 </net>
@@ -19018,8 +19029,8 @@ W = angled&lt;p&gt;
 <segment>
 <pinref part="MIDI_CH" gate="G$1" pin="S"/>
 <pinref part="U1" gate="G$1" pin="PC0(ADC0)"/>
-<wire x1="50.8" y1="88.9" x2="50.8" y2="73.66" width="0.1524" layer="91"/>
-<wire x1="50.8" y1="73.66" x2="43.18" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="48.26" y1="88.9" x2="48.26" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="48.26" y1="73.66" x2="43.18" y2="73.66" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$22" class="0">
@@ -19157,11 +19168,11 @@ W = angled&lt;p&gt;
 </segment>
 <segment>
 <pinref part="MIDI_CH" gate="G$1" pin="A"/>
-<wire x1="55.88" y1="81.28" x2="55.88" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="81.28" x2="53.34" y2="78.74" width="0.1524" layer="91"/>
 <pinref part="GND5" gate="1" pin="GND"/>
 </segment>
 <segment>
-<wire x1="106.68" y1="53.34" x2="106.68" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="111.76" y1="53.34" x2="111.76" y2="63.5" width="0.1524" layer="91"/>
 <pinref part="R8" gate="G$1" pin="1"/>
 <pinref part="GND6" gate="1" pin="GND"/>
 </segment>
@@ -19203,7 +19214,7 @@ W = angled&lt;p&gt;
 </segment>
 <segment>
 <pinref part="SCALE_TRIM" gate="G$1" pin="E"/>
-<wire x1="99.06" y1="60.96" x2="99.06" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="104.14" y1="60.96" x2="104.14" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="GND11" gate="1" pin="GND"/>
 </segment>
 <segment>
@@ -19228,6 +19239,11 @@ W = angled&lt;p&gt;
 <pinref part="RES_POT" gate="G$1" pin="3"/>
 <pinref part="GND14" gate="1" pin="GND"/>
 <wire x1="81.28" y1="53.34" x2="81.28" y2="60.96" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="MIDI_OUT_THRU" gate="G$1" pin="3"/>
+<pinref part="GND15" gate="1" pin="GND"/>
+<wire x1="63.5" y1="114.3" x2="63.5" y2="121.92" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$24" class="0">
@@ -19329,6 +19345,22 @@ W = angled&lt;p&gt;
 <pinref part="RES_POT" gate="G$1" pin="2"/>
 <pinref part="U1" gate="G$1" pin="PC4(ADC4/SDA)"/>
 <wire x1="81.28" y1="63.5" x2="43.18" y2="63.5" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$39" class="0">
+<segment>
+<pinref part="MIDI_OUT_THRU" gate="G$1" pin="1"/>
+<pinref part="R9" gate="G$1" pin="2"/>
+<wire x1="55.88" y1="127" x2="63.5" y2="127" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$42" class="0">
+<segment>
+<pinref part="U1" gate="G$1" pin="PD1(TXD)"/>
+<wire x1="43.18" y1="48.26" x2="58.42" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="58.42" y1="48.26" x2="58.42" y2="124.46" width="0.1524" layer="91"/>
+<pinref part="MIDI_OUT_THRU" gate="G$1" pin="2"/>
+<wire x1="58.42" y1="124.46" x2="63.5" y2="124.46" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

@@ -18593,7 +18593,7 @@ W = angled&lt;p&gt;
 <part name="C2" library="rcl" deviceset="C-US" device="050-024X044" value="27pF"/>
 <part name="R1" library="rcl" deviceset="R-US_" device="0207/10" value="10k"/>
 <part name="OK1" library="optocoupler" deviceset="6N138" device=""/>
-<part name="C3" library="rcl" deviceset="C-US" device="050-024X044" value=".1uF"/>
+<part name="C3" library="rcl" deviceset="C-US" device="050-024X044" value="100n"/>
 <part name="D1" library="SparkFun-DiscreteSemi" deviceset="DIODE" device="1N4148"/>
 <part name="R2" library="rcl" deviceset="R-US_" device="0207/10" value="220"/>
 <part name="R3" library="rcl" deviceset="R-US_" device="0207/10" value="270"/>
@@ -18650,6 +18650,7 @@ W = angled&lt;p&gt;
 <part name="R9" library="rcl" deviceset="R-US_" device="0207/10" value="220"/>
 <part name="MIDI_OUT_THRU" library="con-lstb" deviceset="MA03-1" device=""/>
 <part name="GND15" library="supply1" deviceset="GND" device=""/>
+<part name="R12" library="rcl" deviceset="R-US_" device="0207/10" value="2k4"/>
 </parts>
 <sheets>
 <sheet>
@@ -18716,7 +18717,7 @@ W = angled&lt;p&gt;
 <instance part="MIDI_IN" gate="-2" x="-25.4" y="104.14" rot="MR0"/>
 <instance part="GND1" gate="1" x="-25.4" y="10.16"/>
 <instance part="GND2" gate="1" x="20.32" y="81.28"/>
-<instance part="GND3" gate="1" x="38.1" y="86.36"/>
+<instance part="GND3" gate="1" x="35.56" y="81.28"/>
 <instance part="GND4" gate="1" x="73.66" y="78.74"/>
 <instance part="GND5" gate="1" x="53.34" y="76.2"/>
 <instance part="GND6" gate="1" x="111.76" y="50.8"/>
@@ -18741,6 +18742,7 @@ W = angled&lt;p&gt;
 <instance part="R9" gate="G$1" x="50.8" y="124.46"/>
 <instance part="MIDI_OUT_THRU" gate="G$1" x="73.66" y="121.92" rot="R180"/>
 <instance part="GND15" gate="1" x="66.04" y="111.76"/>
+<instance part="R12" gate="G$1" x="40.64" y="101.6" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -19151,10 +19153,13 @@ W = angled&lt;p&gt;
 <pinref part="GND2" gate="1" pin="GND"/>
 </segment>
 <segment>
-<wire x1="38.1" y1="96.52" x2="38.1" y2="88.9" width="0.1524" layer="91"/>
+<wire x1="35.56" y1="96.52" x2="35.56" y2="83.82" width="0.1524" layer="91"/>
 <pinref part="OK1" gate="G$1" pin="GND"/>
-<wire x1="30.48" y1="96.52" x2="38.1" y2="96.52" width="0.1524" layer="91"/>
+<wire x1="30.48" y1="96.52" x2="35.56" y2="96.52" width="0.1524" layer="91"/>
 <pinref part="GND3" gate="1" pin="GND"/>
+<pinref part="R12" gate="G$1" pin="1"/>
+<wire x1="40.64" y1="96.52" x2="35.56" y2="96.52" width="0.1524" layer="91"/>
+<junction x="35.56" y="96.52"/>
 </segment>
 <segment>
 <wire x1="73.66" y1="91.44" x2="73.66" y2="86.36" width="0.1524" layer="91"/>
@@ -19361,6 +19366,15 @@ W = angled&lt;p&gt;
 <wire x1="58.42" y1="48.26" x2="58.42" y2="121.92" width="0.1524" layer="91"/>
 <pinref part="MIDI_OUT_THRU" gate="G$1" pin="2"/>
 <wire x1="58.42" y1="121.92" x2="66.04" y2="121.92" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$44" class="0">
+<segment>
+<pinref part="OK1" gate="G$1" pin="VB"/>
+<wire x1="30.48" y1="104.14" x2="38.1" y2="104.14" width="0.1524" layer="91"/>
+<wire x1="38.1" y1="104.14" x2="38.1" y2="106.68" width="0.1524" layer="91"/>
+<pinref part="R12" gate="G$1" pin="2"/>
+<wire x1="38.1" y1="106.68" x2="40.64" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
