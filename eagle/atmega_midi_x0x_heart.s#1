@@ -18436,11 +18436,11 @@ at 30/07/2012 17:45:58</description>
 <instance part="C8" gate="G$1" x="147.32" y="25.4"/>
 <instance part="MIDI_CH" gate="G$1" x="55.88" y="88.9" rot="MR0"/>
 <instance part="P+3" gate="1" x="55.88" y="104.14"/>
-<instance part="P+4" gate="1" x="157.48" y="40.64"/>
+<instance part="P+4" gate="1" x="129.54" y="111.76"/>
 <instance part="P+7" gate="1" x="116.84" y="35.56"/>
 <instance part="R10" gate="G$1" x="177.8" y="93.98"/>
 <instance part="J11_VCF_CUTOFF" gate="-1" x="187.96" y="78.74"/>
-<instance part="J11_VCF_CUTOFF" gate="-2" x="187.96" y="73.66"/>
+<instance part="J11_VCF_CUTOFF" gate="-2" x="187.96" y="76.2"/>
 <instance part="J3_VOICE" gate="-1" x="58.42" y="25.4"/>
 <instance part="J3_VOICE" gate="-2" x="58.42" y="35.56"/>
 <instance part="J3_VOICE" gate="-3" x="96.52" y="40.64"/>
@@ -18465,7 +18465,7 @@ at 30/07/2012 17:45:58</description>
 <instance part="GND6" gate="1" x="106.68" y="50.8"/>
 <instance part="GND7" gate="1" x="91.44" y="25.4"/>
 <instance part="GND8" gate="1" x="147.32" y="10.16"/>
-<instance part="GND9" gate="1" x="157.48" y="10.16"/>
+<instance part="GND9" gate="1" x="129.54" y="66.04"/>
 <instance part="GND10" gate="1" x="185.42" y="66.04"/>
 <instance part="GND11" gate="1" x="99.06" y="50.8"/>
 <instance part="R4" gate="G$1" x="53.34" y="60.96"/>
@@ -18599,6 +18599,12 @@ at 30/07/2012 17:45:58</description>
 <pinref part="C8" gate="G$1" pin="1"/>
 <wire x1="147.32" y1="27.94" x2="147.32" y2="30.48" width="0.1524" layer="91"/>
 <wire x1="147.32" y1="30.48" x2="139.7" y2="30.48" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="P+4" gate="1" pin="+12V"/>
+<wire x1="129.54" y1="109.22" x2="129.54" y2="93.98" width="0.1524" layer="91"/>
+<pinref part="U2" gate="A" pin="VDD"/>
+<wire x1="129.54" y1="93.98" x2="132.08" y2="93.98" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$2" class="0">
@@ -18903,7 +18909,7 @@ at 30/07/2012 17:45:58</description>
 </segment>
 <segment>
 <pinref part="J11_VCF_CUTOFF" gate="-2" pin="S"/>
-<wire x1="185.42" y1="68.58" x2="185.42" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="185.42" y1="68.58" x2="185.42" y2="76.2" width="0.1524" layer="91"/>
 <pinref part="GND10" gate="1" pin="GND"/>
 </segment>
 <segment>
@@ -18916,6 +18922,12 @@ at 30/07/2012 17:45:58</description>
 <pinref part="GND12" gate="1" pin="GND"/>
 <wire x1="68.58" y1="60.96" x2="73.66" y2="60.96" width="0.1524" layer="91"/>
 <wire x1="73.66" y1="60.96" x2="73.66" y2="58.42" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="GND9" gate="1" pin="GND"/>
+<wire x1="129.54" y1="68.58" x2="129.54" y2="76.2" width="0.1524" layer="91"/>
+<pinref part="U2" gate="A" pin="GND"/>
+<wire x1="129.54" y1="76.2" x2="132.08" y2="76.2" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$24" class="0">

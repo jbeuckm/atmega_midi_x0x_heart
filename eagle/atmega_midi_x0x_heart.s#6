@@ -18420,9 +18420,9 @@ at 30/07/2012 17:45:58</description>
 <instance part="P+1" gate="1" x="-25.4" y="91.44"/>
 <instance part="P+2" gate="1" x="35.56" y="121.92"/>
 <instance part="R5" gate="G$1" x="119.38" y="104.14"/>
-<instance part="SCALE_TRIM" gate="G$1" x="111.76" y="121.92" rot="MR180"/>
+<instance part="SCALE_TRIM" gate="G$1" x="109.22" y="63.5" rot="MR180"/>
 <instance part="R7" gate="G$1" x="147.32" y="119.38"/>
-<instance part="R8" gate="G$1" x="114.3" y="76.2"/>
+<instance part="R8" gate="G$1" x="99.06" y="76.2"/>
 <instance part="R11" gate="G$1" x="147.32" y="50.8"/>
 <instance part="P+6" gate="1" x="73.66" y="111.76"/>
 <instance part="U$4" gate="A" x="93.98" y="99.06"/>
@@ -18462,12 +18462,12 @@ at 30/07/2012 17:45:58</description>
 <instance part="GND3" gate="1" x="38.1" y="86.36"/>
 <instance part="GND4" gate="1" x="73.66" y="78.74"/>
 <instance part="GND5" gate="1" x="55.88" y="76.2"/>
-<instance part="GND6" gate="1" x="109.22" y="66.04"/>
+<instance part="GND6" gate="1" x="93.98" y="63.5"/>
 <instance part="GND7" gate="1" x="91.44" y="25.4"/>
 <instance part="GND8" gate="1" x="147.32" y="10.16"/>
 <instance part="GND9" gate="1" x="157.48" y="10.16"/>
 <instance part="GND10" gate="1" x="193.04" y="55.88"/>
-<instance part="GND11" gate="1" x="111.76" y="109.22"/>
+<instance part="GND11" gate="1" x="109.22" y="50.8"/>
 <instance part="R4" gate="G$1" x="53.34" y="60.96"/>
 <instance part="GATE_LED" gate="G$1" x="63.5" y="60.96" rot="R90"/>
 <instance part="GND12" gate="1" x="73.66" y="55.88"/>
@@ -18623,9 +18623,9 @@ at 30/07/2012 17:45:58</description>
 <wire x1="142.24" y1="119.38" x2="119.38" y2="119.38" width="0.1524" layer="91"/>
 <wire x1="119.38" y1="119.38" x2="119.38" y2="86.36" width="0.1524" layer="91"/>
 <pinref part="SCALE_TRIM" gate="G$1" pin="S"/>
-<wire x1="116.84" y1="121.92" x2="119.38" y2="121.92" width="0.1524" layer="91"/>
-<wire x1="119.38" y1="121.92" x2="119.38" y2="119.38" width="0.1524" layer="91"/>
-<junction x="119.38" y="119.38"/>
+<wire x1="114.3" y1="63.5" x2="119.38" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="119.38" y1="63.5" x2="119.38" y2="86.36" width="0.1524" layer="91"/>
+<junction x="119.38" y="86.36"/>
 </segment>
 </net>
 <net name="N$13" class="0">
@@ -18637,7 +18637,7 @@ at 30/07/2012 17:45:58</description>
 <wire x1="124.46" y1="76.2" x2="124.46" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="124.46" y1="81.28" x2="129.54" y2="81.28" width="0.1524" layer="91"/>
 <pinref part="R8" gate="G$1" pin="2"/>
-<wire x1="124.46" y1="76.2" x2="119.38" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="124.46" y1="76.2" x2="104.14" y2="76.2" width="0.1524" layer="91"/>
 <junction x="124.46" y="76.2"/>
 </segment>
 </net>
@@ -18860,7 +18860,7 @@ at 30/07/2012 17:45:58</description>
 <pinref part="GND5" gate="1" pin="GND"/>
 </segment>
 <segment>
-<wire x1="109.22" y1="68.58" x2="109.22" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="93.98" y1="66.04" x2="93.98" y2="76.2" width="0.1524" layer="91"/>
 <pinref part="R8" gate="G$1" pin="1"/>
 <pinref part="GND6" gate="1" pin="GND"/>
 </segment>
@@ -18902,7 +18902,7 @@ at 30/07/2012 17:45:58</description>
 </segment>
 <segment>
 <pinref part="SCALE_TRIM" gate="G$1" pin="E"/>
-<wire x1="111.76" y1="114.3" x2="111.76" y2="111.76" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="55.88" x2="109.22" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="GND11" gate="1" pin="GND"/>
 </segment>
 <segment>

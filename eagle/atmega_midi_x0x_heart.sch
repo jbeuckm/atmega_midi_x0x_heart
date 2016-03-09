@@ -18440,7 +18440,7 @@ at 30/07/2012 17:45:58</description>
 <instance part="P+7" gate="1" x="116.84" y="35.56"/>
 <instance part="R10" gate="G$1" x="177.8" y="93.98"/>
 <instance part="J11_VCF_CUTOFF" gate="-1" x="187.96" y="78.74"/>
-<instance part="J11_VCF_CUTOFF" gate="-2" x="187.96" y="73.66"/>
+<instance part="J11_VCF_CUTOFF" gate="-2" x="187.96" y="76.2"/>
 <instance part="J3_VOICE" gate="-1" x="58.42" y="25.4"/>
 <instance part="J3_VOICE" gate="-2" x="58.42" y="35.56"/>
 <instance part="J3_VOICE" gate="-3" x="96.52" y="40.64"/>
@@ -18761,10 +18761,13 @@ at 30/07/2012 17:45:58</description>
 </net>
 <net name="N$15" class="0">
 <segment>
-<wire x1="124.46" y1="2.54" x2="172.72" y2="2.54" width="0.1524" layer="91"/>
+<wire x1="124.46" y1="2.54" x2="193.04" y2="2.54" width="0.1524" layer="91"/>
 <wire x1="124.46" y1="10.16" x2="124.46" y2="2.54" width="0.1524" layer="91"/>
 <pinref part="PWR1" gate="G$1" pin="CV"/>
 <wire x1="114.3" y1="10.16" x2="124.46" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="193.04" y1="2.54" x2="193.04" y2="93.98" width="0.1524" layer="91"/>
+<pinref part="R10" gate="G$1" pin="2"/>
+<wire x1="193.04" y1="93.98" x2="182.88" y2="93.98" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$18" class="0">
@@ -18909,7 +18912,7 @@ at 30/07/2012 17:45:58</description>
 </segment>
 <segment>
 <pinref part="J11_VCF_CUTOFF" gate="-2" pin="S"/>
-<wire x1="185.42" y1="68.58" x2="185.42" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="185.42" y1="68.58" x2="185.42" y2="76.2" width="0.1524" layer="91"/>
 <pinref part="GND10" gate="1" pin="GND"/>
 </segment>
 <segment>
