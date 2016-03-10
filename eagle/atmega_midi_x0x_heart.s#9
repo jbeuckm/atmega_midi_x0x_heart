@@ -18647,6 +18647,8 @@ W = angled&lt;p&gt;
 <part name="RES_POT" library="con-lstb" deviceset="MA03-1" device=""/>
 <part name="P+9" library="supply1" deviceset="+5V" device=""/>
 <part name="GND14" library="supply1" deviceset="GND" device=""/>
+<part name="R9" library="rcl" deviceset="R-US_" device="0207/10" value="220"/>
+<part name="MIDI_OUT_THRU" library="con-lstb" deviceset="MA03-1" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -18735,6 +18737,8 @@ W = angled&lt;p&gt;
 <instance part="RES_POT" gate="G$1" x="88.9" y="63.5" rot="R180"/>
 <instance part="P+9" gate="1" x="81.28" y="73.66"/>
 <instance part="GND14" gate="1" x="81.28" y="50.8"/>
+<instance part="R9" gate="G$1" x="50.8" y="127"/>
+<instance part="MIDI_OUT_THRU" gate="G$1" x="71.12" y="124.46" rot="R180"/>
 </instances>
 <busses>
 </busses>
@@ -18829,11 +18833,16 @@ W = angled&lt;p&gt;
 <pinref part="OK1" gate="G$1" pin="VCC"/>
 <wire x1="30.48" y1="106.68" x2="35.56" y2="106.68" width="0.1524" layer="91"/>
 <wire x1="35.56" y1="106.68" x2="35.56" y2="114.3" width="0.1524" layer="91"/>
-<wire x1="35.56" y1="114.3" x2="45.72" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="35.56" y1="114.3" x2="40.64" y2="114.3" width="0.1524" layer="91"/>
 <pinref part="R3" gate="G$1" pin="2"/>
 <pinref part="P+2" gate="1" pin="+5V"/>
+<wire x1="40.64" y1="114.3" x2="45.72" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="35.56" y1="119.38" x2="35.56" y2="114.3" width="0.1524" layer="91"/>
 <junction x="35.56" y="114.3"/>
+<pinref part="R9" gate="G$1" pin="1"/>
+<wire x1="45.72" y1="127" x2="40.64" y2="127" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="127" x2="40.64" y2="114.3" width="0.1524" layer="91"/>
+<junction x="40.64" y="114.3"/>
 </segment>
 <segment>
 <pinref part="P+6" gate="1" pin="+5V"/>
@@ -19329,6 +19338,13 @@ W = angled&lt;p&gt;
 <pinref part="RES_POT" gate="G$1" pin="2"/>
 <pinref part="U1" gate="G$1" pin="PC4(ADC4/SDA)"/>
 <wire x1="81.28" y1="63.5" x2="43.18" y2="63.5" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$39" class="0">
+<segment>
+<pinref part="MIDI_OUT_THRU" gate="G$1" pin="1"/>
+<pinref part="R9" gate="G$1" pin="2"/>
+<wire x1="55.88" y1="127" x2="63.5" y2="127" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

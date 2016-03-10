@@ -19354,6 +19354,15 @@ W = angled&lt;p&gt;
 <wire x1="55.88" y1="127" x2="63.5" y2="127" width="0.1524" layer="91"/>
 </segment>
 </net>
+<net name="N$42" class="0">
+<segment>
+<pinref part="U1" gate="G$1" pin="PD1(TXD)"/>
+<wire x1="43.18" y1="48.26" x2="58.42" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="58.42" y1="48.26" x2="58.42" y2="124.46" width="0.1524" layer="91"/>
+<pinref part="MIDI_OUT_THRU" gate="G$1" pin="2"/>
+<wire x1="58.42" y1="124.46" x2="63.5" y2="124.46" width="0.1524" layer="91"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
