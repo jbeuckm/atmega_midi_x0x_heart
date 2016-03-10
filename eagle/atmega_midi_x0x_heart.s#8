@@ -18593,7 +18593,7 @@ W = angled&lt;p&gt;
 <part name="C2" library="rcl" deviceset="C-US" device="050-024X044" value="27pF"/>
 <part name="R1" library="rcl" deviceset="R-US_" device="0207/10" value="10k"/>
 <part name="OK1" library="optocoupler" deviceset="6N138" device=""/>
-<part name="C3" library="rcl" deviceset="C-US" device="050-024X044" value=".1uF"/>
+<part name="C3" library="rcl" deviceset="C-US" device="050-024X044" value="100n"/>
 <part name="D1" library="SparkFun-DiscreteSemi" deviceset="DIODE" device="1N4148"/>
 <part name="R2" library="rcl" deviceset="R-US_" device="0207/10" value="220"/>
 <part name="R3" library="rcl" deviceset="R-US_" device="0207/10" value="270"/>
