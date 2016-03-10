@@ -1979,7 +1979,7 @@ design rules under a new name.</description>
 <param name="mdCopperDimension" value="0mil"/>
 <param name="mdDrill" value="16mil"/>
 <param name="mdSmdStop" value="0mil"/>
-<param name="msWidth" value="30mil"/>
+<param name="msWidth" value="27mil"/>
 <param name="msDrill" value="31mil"/>
 <param name="msMicroVia" value="9.99mm"/>
 <param name="msBlindViaRatio" value="0.5"/>
@@ -2159,11 +2159,11 @@ design rules under a new name.</description>
 <attribute name="MF" value="MOLEX" x="40.64" y="13.97" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="OC_FARNELL" value="1462926" x="40.64" y="13.97" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
-<element name="MIDI_OUT_THRU" library="con-lstb" package="MA03-1" value="" x="38.1" y="22.86" rot="R270">
-<attribute name="OC_NEWARK" value="unknown" x="38.1" y="22.86" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MPN" value="" x="38.1" y="22.86" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MF" value="" x="38.1" y="22.86" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="OC_FARNELL" value="unknown" x="38.1" y="22.86" size="1.778" layer="27" rot="R270" display="off"/>
+<element name="MIDI_OUT_THRU" library="con-lstb" package="MA03-1" value="" x="39.37" y="22.86" rot="R270">
+<attribute name="OC_NEWARK" value="unknown" x="39.37" y="22.86" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MPN" value="" x="39.37" y="22.86" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MF" value="" x="39.37" y="22.86" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="OC_FARNELL" value="unknown" x="39.37" y="22.86" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
 <element name="OK1" library="optocoupler" package="DIL08" value="6N138" x="30.48" y="24.13">
 <attribute name="OC_NEWARK" value="35K5294" x="30.48" y="24.13" size="1.778" layer="27" display="off"/>
@@ -2184,12 +2184,12 @@ design rules under a new name.</description>
 <element name="R2" library="rcl" package="0207/10" value="220" x="30.48" y="16.51" rot="R180"/>
 <element name="R24" library="rcl" package="0207/10" value="1M" x="60.96" y="24.13" rot="R180"/>
 <element name="R3" library="rcl" package="0207/10" value="270" x="22.86" y="24.13" rot="R90"/>
-<element name="R4" library="rcl" package="0207/10" value="330" x="29.21" y="46.99" rot="R180"/>
+<element name="R4" library="rcl" package="0207/10" value="330" x="27.94" y="46.99" rot="R180"/>
 <element name="R5" library="rcl" package="0207/10" value="3k3" x="38.1" y="59.69"/>
 <element name="R6" library="rcl" package="0207/10" value="100k" x="62.23" y="69.85" rot="R270"/>
 <element name="R7" library="rcl" package="0207/10" value="5k" x="40.64" y="69.85" rot="R90"/>
 <element name="R8" library="rcl" package="0207/10" value="1k" x="59.69" y="69.85" rot="R270"/>
-<element name="R9" library="rcl" package="0207/10" value="220" x="44.45" y="29.21" rot="R180"/>
+<element name="R9" library="rcl" package="0207/10" value="220" x="46.99" y="30.48" rot="R180"/>
 <element name="RES1" library="con-lstb" package="MA03-1" value="" x="86.36" y="16.51" rot="R90">
 <attribute name="OC_NEWARK" value="unknown" x="86.36" y="16.51" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="" x="86.36" y="16.51" size="1.778" layer="27" rot="R90" display="off"/>
@@ -2202,11 +2202,11 @@ design rules under a new name.</description>
 <attribute name="MF" value="" x="71.12" y="16.51" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="OC_FARNELL" value="unknown" x="71.12" y="16.51" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
-<element name="RES_POT" library="con-lstb" package="MA03-1" value="" x="29.21" y="54.61" rot="R90">
-<attribute name="OC_NEWARK" value="unknown" x="29.21" y="54.61" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MPN" value="" x="29.21" y="54.61" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MF" value="" x="29.21" y="54.61" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="OC_FARNELL" value="unknown" x="29.21" y="54.61" size="1.778" layer="27" rot="R90" display="off"/>
+<element name="RES_POT" library="con-lstb" package="MA03-1" value="" x="29.21" y="53.34" rot="R180">
+<attribute name="OC_NEWARK" value="unknown" x="29.21" y="53.34" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MPN" value="" x="29.21" y="53.34" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MF" value="" x="29.21" y="53.34" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="OC_FARNELL" value="unknown" x="29.21" y="53.34" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 <element name="RST1" library="wirepad" package="2,54/0,9" value="reset" x="27.94" y="36.83"/>
 <element name="RST2" library="wirepad" package="2,54/0,9" value="reset " x="24.13" y="35.56"/>
@@ -2286,14 +2286,14 @@ design rules under a new name.</description>
 <contactref element="RES_POT" pad="1"/>
 <wire x1="82.55" y1="24.13" x2="82.55" y2="29.21" width="0" layer="19" extent="1-1"/>
 <wire x1="82.55" y1="21.59" x2="82.55" y2="24.13" width="0" layer="19" extent="1-1"/>
-<wire x1="54.61" y1="41.91" x2="82.55" y2="29.21" width="0" layer="19" extent="1-1"/>
+<wire x1="52.07" y1="30.48" x2="82.55" y2="29.21" width="0" layer="19" extent="1-1"/>
+<wire x1="52.07" y1="34.29" x2="52.07" y2="30.48" width="0" layer="19" extent="1-1"/>
+<wire x1="54.61" y1="41.91" x2="52.07" y2="34.29" width="0" layer="19" extent="1-1"/>
 <wire x1="55.88" y1="45.72" x2="54.61" y2="41.91" width="0" layer="19" extent="1-1"/>
-<wire x1="52.07" y1="34.29" x2="54.61" y2="41.91" width="0" layer="19" extent="1-1"/>
-<wire x1="49.53" y1="29.21" x2="52.07" y2="34.29" width="0" layer="19" extent="1-1"/>
 <wire x1="54.61" y1="54.61" x2="55.88" y2="45.72" width="0" layer="19" extent="1-1"/>
 <wire x1="36.83" y1="49.53" x2="54.61" y2="54.61" width="0" layer="19" extent="1-1"/>
 <wire x1="31.75" y1="44.45" x2="36.83" y2="49.53" width="0" layer="19" extent="1-1"/>
-<wire x1="29.21" y1="52.07" x2="36.83" y2="49.53" width="0" layer="19" extent="1-1"/>
+<wire x1="31.75" y1="53.34" x2="36.83" y2="49.53" width="0" layer="19" extent="1-1"/>
 <wire x1="26.67" y1="27.94" x2="31.75" y2="44.45" width="0" layer="19" extent="1-1"/>
 <wire x1="22.86" y1="29.21" x2="26.67" y2="27.94" width="0" layer="19" extent="1-1"/>
 <wire x1="13.97" y1="34.29" x2="22.86" y2="29.21" width="0" layer="19" extent="1-1"/>
@@ -2386,11 +2386,9 @@ design rules under a new name.</description>
 <wire x1="49.53" y1="41.91" x2="52.07" y2="52.07" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$22">
+<contactref element="U$1" pad="3"/>
 <contactref element="U1" pad="6"/>
-<contactref element="PWR1" pad="15"/>
-<contactref element="PWR1" pad="16"/>
-<wire x1="13.97" y1="39.37" x2="49.53" y2="34.29" width="0" layer="19" extent="1-1"/>
-<wire x1="11.43" y1="39.37" x2="13.97" y2="39.37" width="0" layer="19" extent="1-1"/>
+<wire x1="49.53" y1="34.29" x2="74.93" y2="24.13" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$27">
 <contactref element="R10" pad="1"/>
@@ -2477,8 +2475,8 @@ design rules under a new name.</description>
 <wire x1="44.45" y1="57.15" x2="45.72" y2="66.04" width="0" layer="19" extent="1-1"/>
 <wire x1="39.37" y1="57.15" x2="44.45" y2="57.15" width="0" layer="19" extent="1-1"/>
 <wire x1="34.29" y1="63.5" x2="39.37" y2="57.15" width="0" layer="19" extent="1-1"/>
-<wire x1="29.21" y1="57.15" x2="34.29" y2="63.5" width="0" layer="19" extent="1-1"/>
-<wire x1="17.78" y1="62.23" x2="29.21" y2="57.15" width="0" layer="19" extent="1-1"/>
+<wire x1="26.67" y1="53.34" x2="34.29" y2="63.5" width="0" layer="19" extent="1-1"/>
+<wire x1="17.78" y1="62.23" x2="26.67" y2="53.34" width="0" layer="19" extent="1-1"/>
 <wire x1="19.05" y1="67.31" x2="17.78" y2="62.23" width="0" layer="19" extent="1-1"/>
 <wire x1="54.61" y1="49.53" x2="44.45" y2="57.15" width="0" layer="19" extent="1-1"/>
 <wire x1="50.8" y1="45.72" x2="54.61" y2="49.53" width="0" layer="19" extent="1-1"/>
@@ -2487,8 +2485,8 @@ design rules under a new name.</description>
 <wire x1="53.34" y1="27.94" x2="54.61" y2="34.29" width="0" layer="19" extent="1-1"/>
 <wire x1="68.58" y1="25.4" x2="53.34" y2="27.94" width="0" layer="19" extent="1-1"/>
 <wire x1="74.93" y1="21.59" x2="68.58" y2="25.4" width="0" layer="19" extent="1-1"/>
-<wire x1="38.1" y1="20.32" x2="53.34" y2="27.94" width="0" layer="19" extent="1-1"/>
-<wire x1="34.29" y1="27.94" x2="38.1" y2="20.32" width="0" layer="19" extent="1-1"/>
+<wire x1="39.37" y1="20.32" x2="53.34" y2="27.94" width="0" layer="19" extent="1-1"/>
+<wire x1="34.29" y1="27.94" x2="39.37" y2="20.32" width="0" layer="19" extent="1-1"/>
 <wire x1="34.29" y1="31.75" x2="34.29" y2="27.94" width="0" layer="19" extent="1-1"/>
 <wire x1="24.13" y1="35.56" x2="34.29" y2="31.75" width="0" layer="19" extent="1-1"/>
 <wire x1="24.13" y1="40.64" x2="24.13" y2="35.56" width="0" layer="19" extent="1-1"/>
@@ -2502,12 +2500,12 @@ design rules under a new name.</description>
 <signal name="N$24">
 <contactref element="R4" pad="2"/>
 <contactref element="GATE_LED" pad="A"/>
-<wire x1="24.13" y1="43.18" x2="24.13" y2="46.99" width="0" layer="19" extent="1-1"/>
+<wire x1="24.13" y1="43.18" x2="22.86" y2="46.99" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$28">
 <contactref element="U1" pad="28"/>
 <contactref element="R4" pad="1"/>
-<wire x1="36.83" y1="41.91" x2="34.29" y2="46.99" width="0" layer="19" extent="1-1"/>
+<wire x1="36.83" y1="41.91" x2="33.02" y2="46.99" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$29">
 <contactref element="J11_VCF_CUTOFF" pad="1"/>
@@ -2544,11 +2542,6 @@ design rules under a new name.</description>
 <contactref element="RES2" pad="3"/>
 <wire x1="71.12" y1="19.05" x2="74.93" y2="19.05" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="N$40">
-<contactref element="U1" pad="4"/>
-<contactref element="U$1" pad="3"/>
-<wire x1="44.45" y1="34.29" x2="74.93" y2="24.13" width="0" layer="19" extent="1-1"/>
-</signal>
 <signal name="N$41">
 <contactref element="U1" pad="13"/>
 <contactref element="U$1" pad="2"/>
@@ -2562,17 +2555,17 @@ design rules under a new name.</description>
 <signal name="N$38">
 <contactref element="RES_POT" pad="2"/>
 <contactref element="U1" pad="27"/>
-<wire x1="39.37" y1="41.91" x2="29.21" y2="54.61" width="0" layer="19" extent="1-1"/>
+<wire x1="39.37" y1="41.91" x2="29.21" y2="53.34" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$39">
 <contactref element="MIDI_OUT_THRU" pad="1"/>
 <contactref element="R9" pad="2"/>
-<wire x1="38.1" y1="25.4" x2="39.37" y2="29.21" width="0" layer="19" extent="1-1"/>
+<wire x1="39.37" y1="25.4" x2="41.91" y2="30.48" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$42">
 <contactref element="U1" pad="3"/>
 <contactref element="MIDI_OUT_THRU" pad="2"/>
-<wire x1="38.1" y1="22.86" x2="41.91" y2="34.29" width="0" layer="19" extent="1-1"/>
+<wire x1="39.37" y1="22.86" x2="41.91" y2="34.29" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$44">
 <contactref element="OK1" pad="7"/>
@@ -2588,6 +2581,13 @@ design rules under a new name.</description>
 <contactref element="U1" pad="12"/>
 <contactref element="J3_VOICE" pad="5"/>
 <wire x1="64.77" y1="34.29" x2="78.74" y2="39.37" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$40">
+<contactref element="PWR1" pad="16"/>
+<contactref element="PWR1" pad="15"/>
+<contactref element="U1" pad="4"/>
+<wire x1="13.97" y1="39.37" x2="44.45" y2="34.29" width="0" layer="19" extent="1-1"/>
+<wire x1="11.43" y1="39.37" x2="13.97" y2="39.37" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 </board>

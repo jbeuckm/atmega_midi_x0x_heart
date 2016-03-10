@@ -18656,8 +18656,8 @@ W = angled&lt;p&gt;
 <sheet>
 <plain>
 <text x="68.58" y="25.4" size="1.778" layer="91">square</text>
-<text x="68.58" y="35.56" size="1.778" layer="91">saw</text>
-<text x="68.58" y="38.1" size="1.778" layer="91">cutoff</text>
+<text x="68.58" y="38.1" size="1.778" layer="91">saw</text>
+<text x="68.58" y="35.56" size="1.778" layer="91">cutoff</text>
 <text x="68.58" y="43.18" size="1.778" layer="91">env_mod</text>
 <text x="68.58" y="15.24" size="1.778" layer="91">slide_in</text>
 <text x="68.58" y="17.78" size="1.778" layer="91">slide_out</text>
@@ -18700,10 +18700,10 @@ W = angled&lt;p&gt;
 <instance part="J11_VCF_CUTOFF" gate="-1" x="187.96" y="78.74"/>
 <instance part="J11_VCF_CUTOFF" gate="-2" x="187.96" y="76.2"/>
 <instance part="J3_VOICE" gate="-1" x="53.34" y="25.4"/>
-<instance part="J3_VOICE" gate="-2" x="53.34" y="35.56"/>
+<instance part="J3_VOICE" gate="-2" x="53.34" y="38.1"/>
 <instance part="J3_VOICE" gate="-3" x="88.9" y="38.1"/>
 <instance part="J3_VOICE" gate="-4" x="88.9" y="35.56"/>
-<instance part="J3_VOICE" gate="-5" x="53.34" y="38.1"/>
+<instance part="J3_VOICE" gate="-5" x="53.34" y="35.56"/>
 <instance part="J3_VOICE" gate="-6" x="53.34" y="43.18"/>
 <instance part="J2_SEQ" gate="-1" x="53.34" y="15.24"/>
 <instance part="J2_SEQ" gate="-2" x="53.34" y="17.78"/>
@@ -19111,20 +19111,6 @@ W = angled&lt;p&gt;
 <wire x1="50.8" y1="25.4" x2="43.18" y2="25.4" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$10" class="0">
-<segment>
-<pinref part="J3_VOICE" gate="-2" pin="S"/>
-<pinref part="U1" gate="G$1" pin="PD6(AIN0)"/>
-<wire x1="50.8" y1="35.56" x2="43.18" y2="35.56" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$16" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="PD5(T1)"/>
-<pinref part="J3_VOICE" gate="-5" pin="S"/>
-<wire x1="43.18" y1="38.1" x2="50.8" y2="38.1" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="GND" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="GND@1"/>
@@ -19375,6 +19361,20 @@ W = angled&lt;p&gt;
 <wire x1="38.1" y1="104.14" x2="38.1" y2="106.68" width="0.1524" layer="91"/>
 <pinref part="R12" gate="G$1" pin="2"/>
 <wire x1="38.1" y1="106.68" x2="40.64" y2="106.68" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$10" class="0">
+<segment>
+<pinref part="J3_VOICE" gate="-2" pin="S"/>
+<pinref part="U1" gate="G$1" pin="PD5(T1)"/>
+<wire x1="50.8" y1="38.1" x2="43.18" y2="38.1" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$16" class="0">
+<segment>
+<pinref part="U1" gate="G$1" pin="PD6(AIN0)"/>
+<pinref part="J3_VOICE" gate="-5" pin="S"/>
+<wire x1="43.18" y1="35.56" x2="50.8" y2="35.56" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
