@@ -2281,10 +2281,10 @@ design rules under a new name.</description>
 <wire x1="73.66" y1="11.43" x2="52.07" y2="30.48" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="+12V">
-<contactref element="C5" pad="+"/>
-<contactref element="U$2" pad="P$2"/>
-<contactref element="C8" pad="1"/>
 <contactref element="U2" pad="8"/>
+<contactref element="U$2" pad="P$2"/>
+<contactref element="C5" pad="+"/>
+<contactref element="C8" pad="1"/>
 <wire x1="14.986" y1="59.944" x2="39.37" y2="68.58" width="0" layer="19" extent="1-1"/>
 <wire x1="15.24" y1="55.88" x2="14.986" y2="59.944" width="0" layer="19" extent="1-1"/>
 <wire x1="15.2" y1="51.562" x2="15.24" y2="55.88" width="0" layer="19" extent="1-1"/>
