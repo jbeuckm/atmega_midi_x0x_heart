@@ -15,3 +15,6 @@ Atmega328 MIDI interface for the x0x heart http://www.openmusiclabs.com/projects
 * Controller 72 --> Decay
 * Controller 74 --> VCF Cutoff
  
+Coming soon!
+
+* Controller 2 --> Resonance
