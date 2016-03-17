@@ -18187,6 +18187,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <pinref part="P+10" gate="1" pin="+5V"/>
 <wire x1="177.8" y1="119.38" x2="177.8" y2="111.76" width="0.1524" layer="91"/>
 <wire x1="177.8" y1="111.76" x2="182.88" y2="111.76" width="0.1524" layer="91"/>
+<pinref part="POWER_LED" gate="-1" pin="S"/>
 </segment>
 </net>
 <net name="+12V" class="0">

@@ -18088,9 +18088,9 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <net name="+5V" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="VCC"/>
-<wire x1="-5.08" y1="66.04" x2="-7.62" y2="66.04" width="0.1524" layer="91"/>
-<wire x1="-7.62" y1="66.04" x2="-12.7" y2="66.04" width="0.1524" layer="91"/>
-<wire x1="-12.7" y1="66.04" x2="-12.7" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="-5.08" y1="66.04" x2="-12.7" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="-12.7" y1="66.04" x2="-12.7" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="-12.7" y1="68.58" x2="-12.7" y2="76.2" width="0.1524" layer="91"/>
 <wire x1="-12.7" y1="76.2" x2="-25.4" y2="76.2" width="0.1524" layer="91"/>
 <pinref part="R1" gate="G$1" pin="1"/>
 <wire x1="-20.32" y1="83.82" x2="-25.4" y2="83.82" width="0.1524" layer="91"/>
@@ -18101,10 +18101,9 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <pinref part="C3" gate="G$1" pin="1"/>
 <wire x1="-25.4" y1="71.12" x2="-25.4" y2="76.2" width="0.1524" layer="91"/>
 <junction x="-25.4" y="76.2"/>
-<pinref part="U1" gate="G$1" pin="AREF"/>
-<wire x1="-5.08" y1="58.42" x2="-7.62" y2="58.42" width="0.1524" layer="91"/>
-<wire x1="-7.62" y1="58.42" x2="-7.62" y2="66.04" width="0.1524" layer="91"/>
-<junction x="-7.62" y="66.04"/>
+<pinref part="U1" gate="G$1" pin="AVCC"/>
+<wire x1="-5.08" y1="68.58" x2="-12.7" y2="68.58" width="0.1524" layer="91"/>
+<junction x="-12.7" y="68.58"/>
 </segment>
 <segment>
 <pinref part="OK1" gate="G$1" pin="VCC"/>

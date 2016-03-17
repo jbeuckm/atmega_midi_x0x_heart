@@ -17928,7 +17928,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <part name="GND15" library="supply1" deviceset="GND" device=""/>
 <part name="R12" library="rcl" deviceset="R-US_" device="0207/10" value="2k4"/>
 <part name="U3" library="Maxim_By_element14_Batch_1" deviceset="DS1267S-010+" device="DIP14"/>
-<part name="D2" library="diode" deviceset="ZENER-DIODE" device="DO34-7" value="5V"/>
+<part name="D2" library="diode" deviceset="ZENER-DIODE" device="DO35Z10" value="5V"/>
 <part name="R13" library="rcl" deviceset="R-US_" device="0207/10" value="100"/>
 <part name="GND16" library="supply1" deviceset="GND" device=""/>
 <part name="U$1" library="adafruit" deviceset="FB" device=""/>

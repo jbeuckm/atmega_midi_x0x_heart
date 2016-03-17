@@ -18024,7 +18024,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <instance part="U2" gate="A" x="149.86" y="88.9"/>
 <instance part="RES1" gate="G$1" x="208.28" y="33.02" rot="R180"/>
 <instance part="RES2" gate="G$1" x="208.28" y="20.32" rot="R180"/>
-<instance part="P+8" gate="1" x="160.02" y="60.96"/>
+<instance part="P+8" gate="1" x="162.56" y="60.96"/>
 <instance part="GND13" gate="1" x="157.48" y="7.62"/>
 <instance part="RES_POT" gate="G$1" x="88.9" y="63.5" rot="R180"/>
 <instance part="P+9" gate="1" x="81.28" y="73.66"/>
@@ -18033,7 +18033,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <instance part="MIDI_OUT_THRU" gate="G$1" x="73.66" y="121.92" rot="R180"/>
 <instance part="GND15" gate="1" x="66.04" y="111.76"/>
 <instance part="R12" gate="G$1" x="40.64" y="101.6" rot="R90"/>
-<instance part="U3" gate="A" x="177.8" y="38.1"/>
+<instance part="U3" gate="A" x="180.34" y="38.1"/>
 <instance part="D2" gate="G$1" x="147.32" y="48.26" rot="R270"/>
 <instance part="R13" gate="G$1" x="137.16" y="55.88"/>
 <instance part="GND16" gate="1" x="147.32" y="40.64"/>
@@ -18175,7 +18175,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 </segment>
 <segment>
 <pinref part="P+8" gate="1" pin="+5V"/>
-<wire x1="160.02" y1="55.88" x2="160.02" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="162.56" y1="55.88" x2="162.56" y2="58.42" width="0.1524" layer="91"/>
 <pinref part="U3" gate="A" pin="VCC"/>
 </segment>
 <segment>
@@ -18344,7 +18344,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <segment>
 <wire x1="142.24" y1="30.48" x2="142.24" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="142.24" y1="43.18" x2="76.2" y2="43.18" width="0.1524" layer="91"/>
-<wire x1="142.24" y1="30.48" x2="160.02" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="142.24" y1="30.48" x2="162.56" y2="30.48" width="0.1524" layer="91"/>
 <pinref part="U1" gate="G$1" pin="PD4(XCK/T0)"/>
 <wire x1="76.2" y1="43.18" x2="76.2" y2="40.64" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="40.64" x2="43.18" y2="40.64" width="0.1524" layer="91"/>
@@ -18531,7 +18531,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 </segment>
 <segment>
 <pinref part="GND13" gate="1" pin="GND"/>
-<wire x1="160.02" y1="12.7" x2="157.48" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="162.56" y1="12.7" x2="157.48" y2="12.7" width="0.1524" layer="91"/>
 <wire x1="157.48" y1="12.7" x2="157.48" y2="10.16" width="0.1524" layer="91"/>
 <pinref part="U3" gate="A" pin="GND"/>
 </segment>
@@ -18586,35 +18586,35 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <net name="N$31" class="0">
 <segment>
 <pinref part="RES1" gate="G$1" pin="2"/>
-<wire x1="195.58" y1="33.02" x2="200.66" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="198.12" y1="33.02" x2="200.66" y2="33.02" width="0.1524" layer="91"/>
 <pinref part="U3" gate="A" pin="W1"/>
 </segment>
 </net>
 <net name="N$32" class="0">
 <segment>
 <pinref part="RES1" gate="G$1" pin="1"/>
-<wire x1="195.58" y1="35.56" x2="200.66" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="198.12" y1="35.56" x2="200.66" y2="35.56" width="0.1524" layer="91"/>
 <pinref part="U3" gate="A" pin="H1"/>
 </segment>
 </net>
 <net name="N$34" class="0">
 <segment>
 <pinref part="RES2" gate="G$1" pin="2"/>
-<wire x1="195.58" y1="20.32" x2="200.66" y2="20.32" width="0.1524" layer="91"/>
+<wire x1="198.12" y1="20.32" x2="200.66" y2="20.32" width="0.1524" layer="91"/>
 <pinref part="U3" gate="A" pin="W0"/>
 </segment>
 </net>
 <net name="N$35" class="0">
 <segment>
 <pinref part="RES2" gate="G$1" pin="1"/>
-<wire x1="195.58" y1="22.86" x2="200.66" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="198.12" y1="22.86" x2="200.66" y2="22.86" width="0.1524" layer="91"/>
 <pinref part="U3" gate="A" pin="H0"/>
 </segment>
 </net>
 <net name="N$36" class="0">
 <segment>
 <pinref part="RES2" gate="G$1" pin="3"/>
-<wire x1="195.58" y1="17.78" x2="200.66" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="198.12" y1="17.78" x2="200.66" y2="17.78" width="0.1524" layer="91"/>
 <pinref part="U3" gate="A" pin="L0"/>
 </segment>
 </net>
@@ -18625,7 +18625,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <wire x1="43.18" y1="33.02" x2="78.74" y2="33.02" width="0.1524" layer="91"/>
 <wire x1="78.74" y1="33.02" x2="78.74" y2="40.64" width="0.1524" layer="91"/>
 <wire x1="78.74" y1="40.64" x2="139.7" y2="40.64" width="0.1524" layer="91"/>
-<wire x1="160.02" y1="33.02" x2="139.7" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="162.56" y1="33.02" x2="139.7" y2="33.02" width="0.1524" layer="91"/>
 <pinref part="U3" gate="A" pin="DQ"/>
 </segment>
 </net>
@@ -18636,7 +18636,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <wire x1="137.16" y1="38.1" x2="137.16" y2="35.56" width="0.1524" layer="91"/>
 <pinref part="U1" gate="G$1" pin="PB0(ICP)"/>
 <wire x1="43.18" y1="27.94" x2="81.28" y2="27.94" width="0.1524" layer="91"/>
-<wire x1="160.02" y1="35.56" x2="137.16" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="162.56" y1="35.56" x2="137.16" y2="35.56" width="0.1524" layer="91"/>
 <pinref part="U3" gate="A" pin="CLK"/>
 </segment>
 </net>
@@ -18701,7 +18701,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <segment>
 <pinref part="RES1" gate="G$1" pin="3"/>
 <pinref part="U3" gate="A" pin="L1"/>
-<wire x1="200.66" y1="30.48" x2="195.58" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="200.66" y1="30.48" x2="198.12" y2="30.48" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$47" class="0">
@@ -18714,7 +18714,9 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <net name="N$49" class="0">
 <segment>
 <pinref part="U3" gate="A" pin="VB"/>
-<wire x1="160.02" y1="50.8" x2="154.94" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="162.56" y1="50.8" x2="160.02" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="160.02" y1="50.8" x2="160.02" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="160.02" y1="55.88" x2="154.94" y2="55.88" width="0.1524" layer="91"/>
 <pinref part="C7" gate="G$1" pin="-"/>
 <wire x1="154.94" y1="53.34" x2="154.94" y2="55.88" width="0.1524" layer="91"/>
 <pinref part="R13" gate="G$1" pin="2"/>
