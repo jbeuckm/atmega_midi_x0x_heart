@@ -17889,7 +17889,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <part name="C6" library="rcl" deviceset="C-US" device="050-024X044" value="100n"/>
 <part name="P-1" library="supply1" deviceset="-12V" device=""/>
 <part name="P-2" library="supply1" deviceset="-12V" device=""/>
-<part name="C7" library="rcl" deviceset="CPOL-US" device="B45181A" value="10u"/>
+<part name="C7" library="rcl" deviceset="CPOL-US" device="B45181B" value="10u"/>
 <part name="GND17" library="supply1" deviceset="GND" device=""/>
 <part name="R14" library="rcl" deviceset="R-US_" device="0207/10" value="1k"/>
 <part name="P+10" library="supply1" deviceset="+5V" device=""/>
@@ -18088,9 +18088,9 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <net name="+5V" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="VCC"/>
-<wire x1="-5.08" y1="66.04" x2="-7.62" y2="66.04" width="0.1524" layer="91"/>
-<wire x1="-7.62" y1="66.04" x2="-12.7" y2="66.04" width="0.1524" layer="91"/>
-<wire x1="-12.7" y1="66.04" x2="-12.7" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="-5.08" y1="66.04" x2="-12.7" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="-12.7" y1="66.04" x2="-12.7" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="-12.7" y1="68.58" x2="-12.7" y2="76.2" width="0.1524" layer="91"/>
 <wire x1="-12.7" y1="76.2" x2="-25.4" y2="76.2" width="0.1524" layer="91"/>
 <pinref part="R1" gate="G$1" pin="1"/>
 <wire x1="-20.32" y1="83.82" x2="-25.4" y2="83.82" width="0.1524" layer="91"/>
@@ -18101,10 +18101,9 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <pinref part="C3" gate="G$1" pin="1"/>
 <wire x1="-25.4" y1="71.12" x2="-25.4" y2="76.2" width="0.1524" layer="91"/>
 <junction x="-25.4" y="76.2"/>
-<pinref part="U1" gate="G$1" pin="AREF"/>
-<wire x1="-5.08" y1="58.42" x2="-7.62" y2="58.42" width="0.1524" layer="91"/>
-<wire x1="-7.62" y1="58.42" x2="-7.62" y2="66.04" width="0.1524" layer="91"/>
-<junction x="-7.62" y="66.04"/>
+<pinref part="U1" gate="G$1" pin="AVCC"/>
+<wire x1="-5.08" y1="68.58" x2="-12.7" y2="68.58" width="0.1524" layer="91"/>
+<junction x="-12.7" y="68.58"/>
 </segment>
 <segment>
 <pinref part="OK1" gate="G$1" pin="VCC"/>
@@ -18134,11 +18133,6 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <wire x1="109.22" y1="12.7" x2="106.68" y2="12.7" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="P+3" gate="1" pin="+5V"/>
-<pinref part="MIDI_CH" gate="G$1" pin="E"/>
-<wire x1="53.34" y1="96.52" x2="53.34" y2="99.06" width="0.1524" layer="91"/>
-</segment>
-<segment>
 <pinref part="P+8" gate="1" pin="+5V"/>
 <wire x1="162.56" y1="55.88" x2="162.56" y2="58.42" width="0.1524" layer="91"/>
 <pinref part="U3" gate="A" pin="VCC"/>
@@ -18153,6 +18147,11 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <wire x1="177.8" y1="119.38" x2="177.8" y2="111.76" width="0.1524" layer="91"/>
 <wire x1="177.8" y1="111.76" x2="182.88" y2="111.76" width="0.1524" layer="91"/>
 <pinref part="POWER_LED" gate="-1" pin="S"/>
+</segment>
+<segment>
+<pinref part="P+3" gate="1" pin="+5V"/>
+<pinref part="MIDI_CH" gate="G$1" pin="E"/>
+<wire x1="53.34" y1="96.52" x2="53.34" y2="99.06" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="+12V" class="0">
@@ -18300,10 +18299,10 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 </net>
 <net name="N$19" class="0">
 <segment>
-<pinref part="MIDI_CH" gate="G$1" pin="S"/>
 <pinref part="U1" gate="G$1" pin="PC0(ADC0)"/>
-<wire x1="48.26" y1="88.9" x2="48.26" y2="73.66" width="0.1524" layer="91"/>
 <wire x1="48.26" y1="73.66" x2="43.18" y2="73.66" width="0.1524" layer="91"/>
+<pinref part="MIDI_CH" gate="G$1" pin="S"/>
+<wire x1="48.26" y1="88.9" x2="48.26" y2="73.66" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$22" class="0">
@@ -18429,11 +18428,6 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <pinref part="GND4" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="MIDI_CH" gate="G$1" pin="A"/>
-<wire x1="53.34" y1="81.28" x2="53.34" y2="78.74" width="0.1524" layer="91"/>
-<pinref part="GND5" gate="1" pin="GND"/>
-</segment>
-<segment>
 <wire x1="111.76" y1="53.34" x2="111.76" y2="63.5" width="0.1524" layer="91"/>
 <pinref part="R8" gate="G$1" pin="1"/>
 <pinref part="GND6" gate="1" pin="GND"/>
@@ -18525,6 +18519,11 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <pinref part="R14" gate="G$1" pin="1"/>
 <pinref part="GND18" gate="1" pin="GND"/>
 <wire x1="208.28" y1="104.14" x2="210.82" y2="104.14" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="GND5" gate="1" pin="GND"/>
+<pinref part="MIDI_CH" gate="G$1" pin="A"/>
+<wire x1="53.34" y1="81.28" x2="53.34" y2="78.74" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$24" class="0">
