@@ -4,19 +4,19 @@
 (This file generated from the board:)
 (.../eagle/atmega_midi_x0x_heart.brd)
 (Current profile is .../pcbgcode.repo/profiles/mach.pp  )
-(This file generated 3/18/16 9:06 PM)
+(This file generated 3/25/16 10:12 PM)
 (Settings from pcb-machine.h)
 (spindle on time = 0.0000)
 (spindle speed = 20000.0000)
-(tool change at 0.0000  0.0000  3.0000  )
+(tool change at 0.0000  0.0000  1.5000  )
 (feed rate xy = F0     )
 (feed rate z  = F20    )
 (Z Axis Settings)
 (  High     Up        Down     Drill)
-(0.2500  	0.0500  	-0.0030 	-0.0730 )
+(0.2500  	0.0500  	-0.0035 	-0.0730 )
 (Settings from pcb-defaults.h)
 (isolate min = 0.0040)
-(isolate max = 0.0150)
+(isolate max = 0.0200)
 (isolate step = 0.0015)
 (Generated bottom outlines, bottom drill, )
 (Unit of measure: inch)
@@ -39,7 +39,7 @@ G00 X0.0000  Y0.0000
 M03
 G04 P0.000000
 M05
-G00 Z3.0000  
+G00 Z1.5000  
 M06 T01  ; 0.0315  
 G01 Z0.0000  F20    
 M06 
@@ -57,7 +57,7 @@ G82 X-3.1800 Y0.9500
 G82 X-0.5200 Y0.3684  
 G82 X-0.5200 Y0.1716  
 M05
-G00 Z3.0000  
+G00 Z1.5000  
 G00 X0.0000  Y0.0000  
 M06 T02  ; 0.0320  
 G01 Z0.0000  F20    
@@ -172,7 +172,7 @@ G82 X-0.6700 Y0.4100
 G82 X-1.0700 Y0.4100  
 G82 X-2.0200 Y0.0600  
 M05
-G00 Z3.0000  
+G00 Z1.5000  
 G00 X0.0000  Y0.0000  
 M06 T03  ; 0.0354  
 G01 Z0.0000  F20    
@@ -183,7 +183,7 @@ G04 P0.000000
 G82 X-0.7000 Y0.2900  Z-0.0730 F20    R0.0500  P0.010000
 G82 X-1.0000 Y0.2900  
 M05
-G00 Z3.0000  
+G00 Z1.5000  
 G00 X0.0000  Y0.0000  
 M06 T04  ; 0.0360  
 G01 Z0.0000  F20    
@@ -194,7 +194,7 @@ G04 P0.000000
 G82 X-0.3800 Y1.8600  Z-0.0730 F20    R0.0500  P0.010000
 G82 X-0.9600 Y1.2800  
 M05
-G00 Z3.0000  
+G00 Z1.5000  
 G00 X0.0000  Y0.0000  
 M06 T05  ; 0.0390  
 G01 Z0.0000  F20    
@@ -211,7 +211,7 @@ G82 X-1.4700 Y2.0700
 G82 X-1.3700 Y2.0700  
 G82 X-1.2700 Y2.0700  
 M05
-G00 Z3.0000  
+G00 Z1.5000  
 G00 X0.0000  Y0.0000  
 M06 T06  ; 0.0394  
 G01 Z0.0000  F20    
@@ -252,7 +252,7 @@ G82 X-2.5700 Y2.0700
 G82 X-2.5700 Y1.9700  
 G82 X-2.5700 Y1.8700  
 M05
-G00 Z3.0000  
+G00 Z1.5000  
 G00 X0.0000  Y0.0000  
 M06 T07  ; 0.0400  
 G01 Z0.0000  F20    
@@ -277,7 +277,7 @@ G82 X-0.3200 Y1.0700
 G82 X-0.3200 Y1.2700  
 G82 X-0.2200 Y1.2700  
 M05
-G00 Z3.0000  
+G00 Z1.5000  
 G00 X0.0000  Y0.0000  
 M06 T08  ; 0.0440  
 G01 Z0.0000  F20    

@@ -1,7 +1,7 @@
 #include <MIDI.h>
 #include "AH_MCP4922.h"
 
-#define GATE_PIN 4
+#define GATE_PIN 2
 #define GATE_LED A5
 
 #define ENV_MOD_CTRL 1
