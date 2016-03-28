@@ -3,6 +3,7 @@
 
 
 DS1267::DS1267(int clkPin, int dqPin, int resetPin) {
+
     _clkPin = clkPin;
     pinMode(_clkPin, OUTPUT);
     _dqPin = dqPin;
@@ -16,19 +17,12 @@ DS1267::DS1267(int clkPin, int dqPin, int resetPin) {
 }
 
 
-void DS1267::setValue(byte potNumber, byte value) {
+void DS1267::setValue(byte pot1value, byte pot2value, byte stackBit) {
 
-	digitalWrite(_ldacPin, LOW);
-	digitalWrite(_clkPin, LOW);
-	digitalWrite(_loadPin, HIGH);
+    digitalWrite(_resetPin, HIGH);
+    delayMicroseconds(1);
 
-	byte mask;
-
-  for (mask = B100; mask>0; mask >>= 1) {
-
-	digitalWrite(_clkPin, HIGH);
-
-    if (dacNumber & mask){
+    if (stackBit){
       digitalWrite(_dataPin, HIGH);
     }
     else{
@@ -36,25 +30,15 @@ void DS1267::setValue(byte potNumber, byte value) {
     }
 
     delayMicroseconds(1);
-	digitalWrite(_clkPin, LOW);
+    digitalWrite(_clkPin, HIGH);
     delayMicroseconds(1);
-  }
-
-
-	// clock in the RNG bit (x2 output voltage)
-	digitalWrite(_clkPin, HIGH);
-	delayMicroseconds(1);
-	digitalWrite(_dataPin, HIGH);
-	delayMicroseconds(1);
-	digitalWrite(_clkPin, LOW);
-	delayMicroseconds(1);
+    digitalWrite(_clkPin, LOW);
+    delayMicroseconds(1);
 
     
   for (mask = B10000000; mask>0; mask >>= 1) {
 
-	digitalWrite(_clkPin, HIGH);
-
-    if (value & mask){
+    if (pot1value & mask){
       digitalWrite(_dataPin, HIGH);
     }
     else{
@@ -62,19 +46,32 @@ void DS1267::setValue(byte potNumber, byte value) {
     }
 
     delayMicroseconds(1);
+	digitalWrite(_clkPin, HIGH);
+    delayMicroseconds(1);
 	digitalWrite(_clkPin, LOW);
     delayMicroseconds(1);
 
   }
 
+
+  for (mask = B10000000; mask>0; mask >>= 1) {
+
+    if (pot2value & mask){
+      digitalWrite(_dataPin, HIGH);
+    }
+    else{
       digitalWrite(_dataPin, LOW);
+    }
+
+    delayMicroseconds(1);
+	digitalWrite(_clkPin, HIGH);
+    delayMicroseconds(1);
+	digitalWrite(_clkPin, LOW);
     delayMicroseconds(1);
 
+  }
 
-	digitalWrite(_loadPin, LOW);
-    delayMicroseconds(1);
-	digitalWrite(_loadPin, HIGH);
-    delayMicroseconds(1);
-    
+	digitalWrite(_resetPin, LOW);
+    delayMicroseconds(1);    
 }
 
