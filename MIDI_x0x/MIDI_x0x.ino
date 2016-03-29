@@ -1,6 +1,6 @@
 #include <MIDI.h>
 #include "AH_MCP4922.h"
-#include "DS1267.h"
+#include "DS1267/DS1267.h"
 
 #define GATE_PIN 2
 #define GATE_LED A5
@@ -27,6 +27,7 @@
 #define ACCENT_CTRL 11
 #define ACCENT_PIN 10
 
+#define RES_CTRL 2
 
 #define ALL_NOTES_OFF 123
 #define CTRL_RESET 121
@@ -117,6 +118,10 @@ void handleControlChange(byte channel, byte number, byte value)
         digitalWrite(SLIDE_IN_PIN, LOW);
         digitalWrite(SLIDE_OUT_PIN, HIGH);
       }
+      break;
+
+    case RES_CTRL:
+      ResonancePot.setValue(scaledValue, scaledValue, 0);
       break;
       
     case ALL_NOTES_OFF:

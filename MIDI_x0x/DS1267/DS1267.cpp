@@ -23,10 +23,10 @@ void DS1267::setValue(byte pot1value, byte pot2value, byte stackBit) {
     delayMicroseconds(1);
 
     if (stackBit){
-      digitalWrite(_dataPin, HIGH);
+      digitalWrite(_dqPin, HIGH);
     }
     else{
-      digitalWrite(_dataPin, LOW);
+      digitalWrite(_dqPin, LOW);
     }
 
     delayMicroseconds(1);
@@ -35,14 +35,15 @@ void DS1267::setValue(byte pot1value, byte pot2value, byte stackBit) {
     digitalWrite(_clkPin, LOW);
     delayMicroseconds(1);
 
+    byte mask;
     
   for (mask = B10000000; mask>0; mask >>= 1) {
 
     if (pot1value & mask){
-      digitalWrite(_dataPin, HIGH);
+      digitalWrite(_dqPin, HIGH);
     }
     else{
-      digitalWrite(_dataPin, LOW);
+      digitalWrite(_dqPin, LOW);
     }
 
     delayMicroseconds(1);
@@ -57,10 +58,10 @@ void DS1267::setValue(byte pot1value, byte pot2value, byte stackBit) {
   for (mask = B10000000; mask>0; mask >>= 1) {
 
     if (pot2value & mask){
-      digitalWrite(_dataPin, HIGH);
+      digitalWrite(_dqPin, HIGH);
     }
     else{
-      digitalWrite(_dataPin, LOW);
+      digitalWrite(_dqPin, LOW);
     }
 
     delayMicroseconds(1);
