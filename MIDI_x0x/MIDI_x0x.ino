@@ -1,5 +1,6 @@
 #include <MIDI.h>
 #include "AH_MCP4922.h"
+#include "DS1267.h"
 
 #define GATE_PIN 2
 #define GATE_LED A5
@@ -36,6 +37,10 @@ AH_MCP4922 PitchDac(A1,A2,A3,LOW,LOW);
 // the PWM pins have some latency. Whatever velocity controls cannot 
 // afford latency since the note is beginning simultaneously.
 AH_MCP4922 CutoffDac(A1,A2,A3,HIGH,LOW);
+
+// dual digipot to control x0x resonance programatically
+DS1267 ResonancePot(8,7,4);
+
 
 int liveNoteCount = 0;
 int pitchbendOffset = 0;
