@@ -9,10 +9,10 @@
 #define ENV_MOD_PIN 3
 
 #define CUTOFF_CTRL 74
-#define CUTOFF_PIN 5
+#define CUTOFF_PIN 6
 
 #define SAW_CTRL 70
-#define SAW_PIN 6
+#define SAW_PIN 5
 #define SQR_CTRL 71
 #define SQR_PIN 9
 
@@ -121,7 +121,7 @@ void handleControlChange(byte channel, byte number, byte value)
       break;
 
     case RES_CTRL:
-      ResonancePot.setValue(scaledValue, scaledValue, 0);
+      ResonancePot.setValue(255-scaledValue, 255-scaledValue, 0);
       break;
       
     case ALL_NOTES_OFF:

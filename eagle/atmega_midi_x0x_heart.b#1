@@ -2167,7 +2167,7 @@ design rules under a new name.</description>
 <element name="R12" library="rcl" package="0207/10" value="2k4" x="25.908" y="25.908" rot="R180"/>
 <element name="U3" library="Maxim_By_element14_Batch_1" package="DIP14" value="DS1267S-010+DIP14" x="69.088" y="15.748" rot="R90"/>
 <element name="D2" library="diode" package="DO35Z10" value="5V" x="43.688" y="13.208"/>
-<element name="R13" library="rcl" package="0207/10" value="100" x="51.308" y="6.604" rot="R90"/>
+<element name="R13" library="rcl" package="0207/10" value="470" x="51.308" y="6.604" rot="R90"/>
 <element name="U$1" library="adafruit" package="FB" value="FB" x="13.208" y="6.858" rot="R270"/>
 <element name="C4" library="rcl" package="B45181A" value="10u" x="38.608" y="8.128" rot="R270"/>
 <element name="C6" library="rcl" package="C050-024X044" value="100n" x="43.688" y="8.128" rot="R270"/>
