@@ -28,6 +28,7 @@
 #define ACCENT_PIN 10
 
 #define RES_CTRL 2
+#define RES_POT_PIN A4
 
 #define ALL_NOTES_OFF 123
 #define CTRL_RESET 121
@@ -200,6 +201,7 @@ void setup()
     MIDI.setHandleControlChange(handleControlChange);
     
     MIDI.begin(selectedChannel);
+    MIDI.turnThruOn();
 }
 
 
@@ -218,9 +220,23 @@ void playScale(int channel) {
 
 }
 
+int resControllerValue, lastResControllerValue, resPotValue;
+float resPotRecentAvg = 0;
 
 void loop()
 {
-    MIDI.read();
+  resPotValue = analogRead(RES_POT_PIN);
+  resPotRecentAvg = .2 * (float)resPotValue + .8 * resPotRecentAvg;
+  
+  resControllerValue = 127 - ((int)resPotRecentAvg >> 3);
+
+  if (abs(lastResControllerValue - resControllerValue) > 1) {
+    lastResControllerValue = resControllerValue;
+    handleControlChange(selectedChannel, RES_CTRL, resControllerValue);
+    MIDI.sendControlChange(RES_CTRL, resControllerValue, selectedChannel);
+  }
+
+
+  MIDI.read();
 }
 
