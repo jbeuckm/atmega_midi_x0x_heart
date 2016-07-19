@@ -82,6 +82,11 @@ void handleNoteOff(byte channel, byte pitch, byte velocity)
 // these hold the current settings
 byte envelopeLevel, cutoff, resonance, accent, sawLevel, squareLevel, slide, decay;
 
+// variables for managing resonance pot input value
+int resControllerValue, lastResControllerValue, resPotValue;
+float resPotRecentAvg = 0;
+
+
 void handleControlChange(byte channel, byte number, byte value)
 {  
   int scaledValue = int(value) << 1;
@@ -156,11 +161,8 @@ void handlePitchBend(byte channel, int bend)
 void handleSystemExclusive(byte message[], unsigned size) {
   
   if (message[1] != 0x77) return;      // manufacturer ID
-  if (message[2] != 33) return;        // model ID
+  if (message[2] != 0x33) return;      // model ID
   if (message[3] != deviceID) return;  // device ID as set with trim pot
-
-  
-  byte param = message[4];
 
   switch (message[4]) {
     
@@ -173,7 +175,7 @@ void handleSystemExclusive(byte message[], unsigned size) {
       break;
 
     case 2:
-      receivePatchDump();
+      receivePatchDump(message);
       break;
       
     default:
@@ -184,6 +186,7 @@ void handleSystemExclusive(byte message[], unsigned size) {
 
 
 void sendPatchDump() {
+  
   byte sysexArray[] = { 0xf0, 0x77, 0x33, deviceID, 0x02, 0,0,0,0,0,0,0,0, 0xf7 };
 
   int paramByte = 5;
@@ -201,8 +204,20 @@ void sendPatchDump() {
   MIDI.sendSysEx(14, sysexArray, true);
 }
 
-void receivePatchDump() {
+
+void receivePatchDump(byte message[]) {
   
+  int paramByte = 5;
+
+  handleControlChange(deviceID, ENV_MOD_CTRL, message[paramByte++]);
+  handleControlChange(deviceID, RES_CTRL, message[paramByte++]);
+  handleControlChange(deviceID, ACCENT_CTRL, message[paramByte++]);
+  handleControlChange(deviceID, SLIDE_CTRL, message[paramByte++]);
+
+  handleControlChange(deviceID, SAW_CTRL, message[paramByte++]);
+  handleControlChange(deviceID, SQR_CTRL, message[paramByte++]);
+  handleControlChange(deviceID, DECAY_CTRL, message[paramByte++]);
+  handleControlChange(deviceID, CUTOFF_CTRL, message[paramByte++]);
 }
 
 
@@ -263,6 +278,10 @@ void setup()
  
     delay(1000);
 
+    // init resonance running avg to avoid sending event at startup
+    resPotRecentAvg = analogRead(RES_POT_PIN);
+    lastResControllerValue = 127 - ((int)resPotRecentAvg >> 3);
+
     playScale(deviceID);
 
     // calibrate 8V
@@ -281,7 +300,7 @@ void setup()
     MIDI.setHandleSystemExclusive(handleSystemExclusive);
     
     MIDI.begin(deviceID);
-    MIDI.turnThruOn();
+    MIDI.turnThruOff();
 }
 
 
@@ -300,9 +319,6 @@ void playScale(int channel) {
 
 }
 
-int resControllerValue, lastResControllerValue, resPotValue;
-float resPotRecentAvg = 0;
-
 void loop()
 {
   resPotValue = analogRead(RES_POT_PIN);
@@ -316,7 +332,6 @@ void loop()
     resonance = resControllerValue;
     MIDI.sendControlChange(RES_CTRL, resControllerValue, deviceID);
   }
-
 
   MIDI.read();
 }

@@ -28,6 +28,8 @@ MIDI Sysex messages for this device begin with a four-byte prefix of the Sysex s
 
 `xx` device ID as set by trim pot
 
+--
+
 At startup, the MIDI channel of the device is the same as the device ID set with the trim pot.
 
 A seven-byte sysex message can be used to change the channel of the interface.
@@ -39,6 +41,8 @@ A seven-byte sysex message can be used to change the channel of the interface.
 `xx` new MIDI channel (0 for omni) 
 
 `F7` end of message
+
+--
 
 A six-byte sysex message can be used to request a dump of the current voice parameters.
 
