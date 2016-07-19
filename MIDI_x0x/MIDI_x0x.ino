@@ -1,5 +1,5 @@
 #include <MIDI.h>
-#include "AH_MCP4922.h"
+#include "AH_MCP4922/AH_MCP4922.h"
 #include "DS1267/DS1267.h"
 
 #define GATE_PIN 2
@@ -143,6 +143,10 @@ void handlePitchBend(byte channel, int bend)
 }
 
 
+void handleSystemExclusive(byte message[], unsigned int length) {
+  
+}
+
 // -----------------------------------------------------------------------------
 
 void setup()
@@ -199,6 +203,8 @@ void setup()
     MIDI.setHandleNoteOff(handleNoteOff);
     MIDI.setHandlePitchBend(handlePitchBend);
     MIDI.setHandleControlChange(handleControlChange);
+
+    MIDI.setHandleSystemExclusive(handleSystemExclusive);
     
     MIDI.begin(selectedChannel);
     MIDI.turnThruOn();
