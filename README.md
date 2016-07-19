@@ -20,7 +20,7 @@ MIDI CC | Function
 
 ### System Exclusive
 
-MIDI Sysex messages for this device begin with a prefix of the Sysex status byte, manufacturer ID, model ID and device ID. 
+MIDI Sysex messages for this device begin with a four-byte prefix of the Sysex status byte, manufacturer ID, model ID and device ID. 
 
 `F0` sysex start
 
@@ -30,16 +30,34 @@ MIDI Sysex messages for this device begin with a prefix of the Sysex status byte
 
 At startup, the MIDI channel of the device is the same as the device ID set with the trim pot.
 
-A seven-byte System Exclusive message can be used to change the channel of the interface.
+A seven-byte sysex message can be used to change the channel of the interface.
 
 `F0 77 33 xx` sysex prefix
 
 `00` select MIDI channel parameter
 
-`03` new MIDI channel (0 for omni) 
+`xx` new MIDI channel (0 for omni) 
 
 `F7` end of message
 
-* Dump Request
+A six-byte sysex message can be used to request a dump of the current voice parameters.
 
+`F0 77 33 xx` sysex prefix
 
+`01` patch dump request
+
+`F7` end of message
+
+The interface will then send a patch dump sysex message that encodes the current voice parameter values.
+
+`F0 77 33 xx` sysex prefix
+
+`02` patch dump
+
+`ee rr aa pp ss qq dd ff`
+
+envelope, resonance, accent, slide, saw, square, decay, cutoff (eight bytes)
+
+`F7` end of message
+
+This dumped patch data can be used to set all voice parameters by sending it back to the interface.
