@@ -1,6 +1,6 @@
 #include <MIDI.h>
-#include "AH_MCP4922/AH_MCP4922.h"
-#include "DS1267/DS1267.h"
+#include <AH_MCP4922.h>
+#include <DS1267.h>
 
 #define GATE_PIN 2
 #define GATE_LED A5
@@ -60,8 +60,6 @@ void handleNoteOn(byte channel, byte pitch, byte velocity)
   baseNoteFrequency = (pitch - 12) * 42;
   PitchDac.setValue(baseNoteFrequency + pitchbendOffset);
 
-  CutoffDac.setValue(velocity * 32);
-
   digitalWrite(GATE_PIN, HIGH);
   digitalWrite(GATE_LED, HIGH);
 
@@ -94,7 +92,7 @@ void handleControlChange(byte channel, byte number, byte value)
   switch (number) {
 
     case CUTOFF_CTRL:
-      analogWrite(CUTOFF_PIN, scaledValue);
+      CutoffDac.setValue(value << 5);
       cutoff = value;
       break;
 
@@ -261,8 +259,8 @@ void setup()
     squareLevel = 0;
 
     pinMode(CUTOFF_PIN, OUTPUT);
-    digitalWrite(CUTOFF_PIN, HIGH);
-    cutoff = 127;
+    digitalWrite(CUTOFF_PIN, LOW);
+    cutoff = 0;
 
     pinMode(DECAY_PIN, OUTPUT);
     digitalWrite(DECAY_PIN, LOW);

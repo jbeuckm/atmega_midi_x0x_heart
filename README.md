@@ -1,7 +1,7 @@
 # MIDI interface for x0x heart
 Atmega328 MIDI interface for the x0x heart http://www.openmusiclabs.com/projects/x0x-heart/
 
-#### NOTE ON/OFF
+### NOTE ON/OFF
 
    The gate pins of the eurorack connector are raised to 5V during the note. The "CV" pins of the eurorack connector are set to 1V/oct pitch control voltage. A pitch scale trimpot can be used to tune the x0x.
 
