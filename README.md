@@ -70,6 +70,8 @@ envelope, resonance, accent, slide, saw, square, decay, cutoff (eight bytes)
 
 This dumped patch data can be used to set all voice parameters by sending it back to the interface.
 
+--
+
 
 #### Save Patch
 
