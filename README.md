@@ -30,6 +30,8 @@ MIDI Sysex messages for this device begin with a four-byte prefix of the Sysex s
 
 --
 
+#### Set MIDI Channel
+
 At startup, the MIDI channel of the device is the same as the device ID set with the trim pot.
 
 A seven-byte sysex message can be used to change the channel of the interface.
@@ -43,6 +45,8 @@ A seven-byte sysex message can be used to change the channel of the interface.
 `F7` end of message
 
 --
+
+#### Patch Dump Request
 
 A six-byte sysex message can be used to request a dump of the current voice parameters.
 
@@ -65,3 +69,14 @@ envelope, resonance, accent, slide, saw, square, decay, cutoff (eight bytes)
 `F7` end of message
 
 This dumped patch data can be used to set all voice parameters by sending it back to the interface.
+
+
+#### Save Patch
+
+`F0 77 33 xx` sysex prefix
+
+`11` save patch
+
+`pp` patch number (0-127)
+
+`F7` end of message

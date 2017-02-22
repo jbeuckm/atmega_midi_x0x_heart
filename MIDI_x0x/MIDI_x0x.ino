@@ -1,6 +1,7 @@
 #include <MIDI.h>
 #include <AH_MCP4922.h>
 #include <DS1267.h>
+#include <EEPROM.h>
 
 #define GATE_PIN 2
 #define GATE_LED A5
@@ -164,22 +165,56 @@ void handleSystemExclusive(byte message[], unsigned size) {
 
   switch (message[4]) {
     
-    case 0:
+    case 0x00:
       setMidiChannel(message[5]);
       break;
     
-    case 1:
+    case 0x01:
       sendPatchDump();
       break;
 
-    case 2:
+    case 0x02:
       receivePatchDump(message);
       break;
+
+    case 0x11:
+      saveProgram(message[5]);
       
     default:
       break;
   }
 
+}
+
+
+void saveProgram(char progNumber) {
+
+  int offset = 8 * progNumber;
+  
+  EEPROM.update(offset++, envelopeLevel);
+  EEPROM.update(offset++, resonance);
+  EEPROM.update(offset++, accent);
+  EEPROM.update(offset++, slide);
+  
+  EEPROM.update(offset++, sawLevel);
+  EEPROM.update(offset++, squareLevel);
+  EEPROM.update(offset++, decay);
+  EEPROM.update(offset, cutoff);
+}
+
+void handleProgramChange(byte channel, byte number) {
+
+  int offset = 8 * number;
+  
+  envelopeLevel = EEPROM.read(offset++);
+  resonance = EEPROM.read(offset++);
+  accent = EEPROM.read(offset++);
+  slide = EEPROM.read(offset++);
+  
+  sawLevel = EEPROM.read(offset++);
+  squareLevel = EEPROM.read(offset++);
+  decay = EEPROM.read(offset++);
+  cutoff = EEPROM.read(offset);
 }
 
 
@@ -197,7 +232,7 @@ void sendPatchDump() {
   sysexArray[paramByte++] = sawLevel;
   sysexArray[paramByte++] = squareLevel;
   sysexArray[paramByte++] = decay;
-  sysexArray[paramByte++] = cutoff;
+  sysexArray[paramByte] = cutoff;
 
   MIDI.sendSysEx(14, sysexArray, true);
 }
@@ -296,6 +331,7 @@ void setup()
     MIDI.setHandleControlChange(handleControlChange);
 
     MIDI.setHandleSystemExclusive(handleSystemExclusive);
+    MIDI.setHandleProgramChange(handleProgramChange);
     
     MIDI.begin(deviceID);
     MIDI.turnThruOff();
