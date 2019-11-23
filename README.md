@@ -1,26 +1,31 @@
 # MIDI interface for x0x heart
+
 Atmega328 MIDI interface for the x0x heart http://www.openmusiclabs.com/projects/x0x-heart/
+
+One-sided for easy home DIY.
+
+![atmega_x0x_midi_layout](atmega_x0x_midi_layout.png)
 
 ### NOTE ON/OFF
 
-   The gate pins of the eurorack connector are raised to 5V during the note. The "CV" pins of the eurorack connector are set to 1V/oct pitch control voltage. A pitch scale trimpot can be used to tune the x0x.
+The gate pins of the eurorack connector are raised to 5V during the note. The "CV" pins of the eurorack connector are set to 1V/oct pitch control voltage. A pitch scale trimpot can be used to tune the x0x.
 
 ### Continuous Controllers
 
-MIDI CC | Function
---- | ---   
-1 | Envelope
-2 | Resonance
-11 | Accent
-65 | Slide above 64 / No slide below 64
-70 | Saw level
-71 | Square level
-72 | Decay
-74 | VCF Cutoff
+| MIDI CC | Function                           |
+| ------- | ---------------------------------- |
+| 1       | Envelope                           |
+| 2       | Resonance                          |
+| 11      | Accent                             |
+| 65      | Slide above 64 / No slide below 64 |
+| 70      | Saw level                          |
+| 71      | Square level                       |
+| 72      | Decay                              |
+| 74      | VCF Cutoff                         |
 
 ### System Exclusive
 
-MIDI Sysex messages for this device begin with a four-byte prefix of the Sysex status byte, manufacturer ID, model ID and device ID. 
+MIDI Sysex messages for this device begin with a four-byte prefix of the Sysex status byte, manufacturer ID, model ID and device ID.
 
 `F0` sysex start
 
@@ -40,7 +45,7 @@ A seven-byte sysex message can be used to change the channel of the interface.
 
 `00` select MIDI channel parameter
 
-`xx` new MIDI channel (0 for omni) 
+`xx` new MIDI channel (0 for omni)
 
 `F7` end of message
 
@@ -71,7 +76,6 @@ envelope, resonance, accent, slide, saw, square, decay, cutoff (eight bytes)
 This dumped patch data can be used to set all voice parameters by sending it back to the interface.
 
 --
-
 
 #### Save Patch
 
