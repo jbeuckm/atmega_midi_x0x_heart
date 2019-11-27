@@ -34,15 +34,12 @@
 #define ALL_NOTES_OFF 123
 #define CTRL_RESET 121
 
-AH_MCP4922 PitchDac(A1,A2,A3,LOW,LOW);
+AH_MCP4922 PitchDac(A1, A2, A3, LOW, LOW);
 
-// Velocity gets assigned to the analog cutoff voltage because 
-// the PWM pins have some latency. Whatever velocity controls cannot 
-// afford latency since the note is beginning simultaneously.
-AH_MCP4922 CutoffDac(A1,A2,A3,HIGH,LOW);
+AH_MCP4922 CutoffDac(A1, A2, A3, HIGH, LOW);
 
 // dual digipot to control x0x resonance programatically
-DS1267 ResonancePot(8,7,4);
+DS1267 ResonancePot(8, 7, 4);
 
 
 int liveNoteCount = 0;
@@ -53,24 +50,33 @@ byte deviceID;
 
 MIDI_CREATE_DEFAULT_INSTANCE();
 
+// these hold the current settings
+byte envelopeLevel, cutoff, resonance, accent, sawLevel, squareLevel, slide, decay;
+
 
 void handleNoteOn(byte channel, byte pitch, byte velocity)
-{  
+{
   liveNoteCount++;
-  
+
+  // set the CC-specified ACCENT level for strong notes
+  if (velocity >= 100) {
+    analogWrite(ACCENT_PIN, int(accent) << 1);
+  } else {
+    analogWrite(ACCENT_PIN, 0);
+  }
+
   baseNoteFrequency = (pitch - 12) * 42;
   PitchDac.setValue(baseNoteFrequency + pitchbendOffset);
 
   digitalWrite(GATE_PIN, HIGH);
   digitalWrite(GATE_LED, HIGH);
-
- }
+}
 
 
 void handleNoteOff(byte channel, byte pitch, byte velocity)
 {
   liveNoteCount--;
-  
+
   if (liveNoteCount <= 0) {
     digitalWrite(GATE_PIN, LOW);
     digitalWrite(GATE_LED, LOW);
@@ -78,18 +84,14 @@ void handleNoteOff(byte channel, byte pitch, byte velocity)
 }
 
 
-// these hold the current settings
-byte envelopeLevel, cutoff, resonance, accent, sawLevel, squareLevel, slide, decay;
-
 // variables for managing resonance pot input value
 int resControllerValue, lastResControllerValue, resPotValue;
 float resPotRecentAvg = 0;
 
 
-void handleControlChange(byte channel, byte number, byte value)
-{  
+void handleControlChange(byte channel, byte number, byte value) {
   int scaledValue = int(value) << 1;
-  
+
   switch (number) {
 
     case CUTOFF_CTRL:
@@ -118,7 +120,6 @@ void handleControlChange(byte channel, byte number, byte value)
       break;
 
     case ACCENT_CTRL:
-      analogWrite(ACCENT_PIN, scaledValue);
       accent = value;
       break;
 
@@ -134,10 +135,10 @@ void handleControlChange(byte channel, byte number, byte value)
       break;
 
     case RES_CTRL:
-      ResonancePot.setValue(255-scaledValue, 255-scaledValue, 0);
+      ResonancePot.setValue(255 - scaledValue, 255 - scaledValue, 0);
       resonance = value;
       break;
-      
+
     case ALL_NOTES_OFF:
       liveNoteCount = 0;
       handlePitchBend(deviceID, 0);
@@ -149,8 +150,7 @@ void handleControlChange(byte channel, byte number, byte value)
 }
 
 
-void handlePitchBend(byte channel, int bend)
-{
+void handlePitchBend(byte channel, int bend) {
   pitchbendOffset = bend >> 4;
 
   PitchDac.setValue(baseNoteFrequency + pitchbendOffset);
@@ -158,17 +158,17 @@ void handlePitchBend(byte channel, int bend)
 
 
 void handleSystemExclusive(byte message[], unsigned size) {
-  
+
   if (message[1] != 0x77) return;      // manufacturer ID
   if (message[2] != 0x33) return;      // model ID
   if (message[3] != deviceID) return;  // device ID as set with trim pot
 
   switch (message[4]) {
-    
+
     case 0x00:
       setMidiChannel(message[5]);
       break;
-    
+
     case 0x01:
       sendPatchDump();
       break;
@@ -179,7 +179,7 @@ void handleSystemExclusive(byte message[], unsigned size) {
 
     case 0x11:
       saveProgram(message[5]);
-      
+
     default:
       break;
   }
@@ -190,12 +190,12 @@ void handleSystemExclusive(byte message[], unsigned size) {
 void saveProgram(char progNumber) {
 
   int offset = 8 * progNumber;
-  
+
   EEPROM.update(offset++, envelopeLevel);
   EEPROM.update(offset++, resonance);
   EEPROM.update(offset++, accent);
   EEPROM.update(offset++, slide);
-  
+
   EEPROM.update(offset++, sawLevel);
   EEPROM.update(offset++, squareLevel);
   EEPROM.update(offset++, decay);
@@ -205,12 +205,12 @@ void saveProgram(char progNumber) {
 void handleProgramChange(byte channel, byte number) {
 
   int offset = 8 * number;
-  
+
   envelopeLevel = EEPROM.read(offset++);
   resonance = EEPROM.read(offset++);
   accent = EEPROM.read(offset++);
   slide = EEPROM.read(offset++);
-  
+
   sawLevel = EEPROM.read(offset++);
   squareLevel = EEPROM.read(offset++);
   decay = EEPROM.read(offset++);
@@ -219,8 +219,8 @@ void handleProgramChange(byte channel, byte number) {
 
 
 void sendPatchDump() {
-  
-  byte sysexArray[] = { 0xf0, 0x77, 0x33, deviceID, 0x02, 0,0,0,0,0,0,0,0, 0xf7 };
+
+  byte sysexArray[] = { 0xf0, 0x77, 0x33, deviceID, 0x02, 0, 0, 0, 0, 0, 0, 0, 0, 0xf7 };
 
   int paramByte = 5;
 
@@ -228,7 +228,7 @@ void sendPatchDump() {
   sysexArray[paramByte++] = resonance;
   sysexArray[paramByte++] = accent;
   sysexArray[paramByte++] = slide;
-  
+
   sysexArray[paramByte++] = sawLevel;
   sysexArray[paramByte++] = squareLevel;
   sysexArray[paramByte++] = decay;
@@ -239,7 +239,7 @@ void sendPatchDump() {
 
 
 void receivePatchDump(byte message[]) {
-  
+
   int paramByte = 5;
 
   handleControlChange(deviceID, ENV_MOD_CTRL, message[paramByte++]);
@@ -255,86 +255,85 @@ void receivePatchDump(byte message[]) {
 
 
 void setMidiChannel(byte newChannel) {
-  
+
   MIDI.begin(newChannel % 17);
   playScale(newChannel % 17);
-  
+
 }
 
 // -----------------------------------------------------------------------------
 
-void setup()
-{
-    int channelSpan = 1024 / 16;
-    int channelInput = analogRead(0);
-    deviceID = channelInput / channelSpan;
-    
-    pinMode(GATE_PIN, OUTPUT);
-    digitalWrite(GATE_PIN, LOW);
-    pinMode(GATE_LED, OUTPUT);
-    digitalWrite(GATE_LED, LOW);
+void setup() {
+  int channelSpan = 1024 / 16;
+  int channelInput = analogRead(0);
+  deviceID = channelInput / channelSpan;
+
+  TCCR0B = (TCCR0B & 0b11111000) | 0x01;
+  TCCR1B = (TCCR1B & 0b11111000) | 0x01;
+  TCCR2B = (TCCR2B & 0b11111000) | 0x01;
+
+  pinMode(GATE_PIN, OUTPUT);
+  digitalWrite(GATE_PIN, LOW);
+  pinMode(GATE_LED, OUTPUT);
+  digitalWrite(GATE_LED, LOW);
 
 
-    digitalWrite(SLIDE_IN_PIN, OUTPUT);
-    digitalWrite(SLIDE_IN_PIN, LOW);
-    digitalWrite(SLIDE_OUT_PIN, OUTPUT);
-    digitalWrite(SLIDE_OUT_PIN, HIGH);
-    slide = 0;
+  digitalWrite(SLIDE_IN_PIN, OUTPUT);
+  digitalWrite(SLIDE_IN_PIN, LOW);
+  digitalWrite(SLIDE_OUT_PIN, OUTPUT);
+  digitalWrite(SLIDE_OUT_PIN, HIGH);
+  slide = 0;
 
-    pinMode(ENV_MOD_PIN, OUTPUT);
-    digitalWrite(ENV_MOD_PIN, HIGH);
-    envelopeLevel = 127;
+  pinMode(ENV_MOD_PIN, OUTPUT);
+  digitalWrite(ENV_MOD_PIN, HIGH);
+  envelopeLevel = 127;
 
-    pinMode(SAW_PIN, OUTPUT);
-    digitalWrite(SAW_PIN, HIGH);
-    sawLevel = 127;
+  pinMode(SAW_PIN, OUTPUT);
+  digitalWrite(SAW_PIN, HIGH);
+  sawLevel = 127;
 
-    pinMode(SQR_PIN, OUTPUT);
-    digitalWrite(SQR_PIN, LOW);
-    squareLevel = 0;
+  pinMode(SQR_PIN, OUTPUT);
+  digitalWrite(SQR_PIN, LOW);
+  squareLevel = 0;
 
-    pinMode(CUTOFF_PIN, OUTPUT);
-    digitalWrite(CUTOFF_PIN, LOW);
-    cutoff = 0;
+  pinMode(CUTOFF_PIN, OUTPUT);
+  digitalWrite(CUTOFF_PIN, LOW);
+  cutoff = 0;
 
-    pinMode(DECAY_PIN, OUTPUT);
-    digitalWrite(DECAY_PIN, LOW);
-    decay = 0;
-    
-    pinMode(ACCENT_PIN, OUTPUT);
-    digitalWrite(ACCENT_PIN, LOW);
-    accent = 0;
+  pinMode(DECAY_PIN, OUTPUT);
+  digitalWrite(DECAY_PIN, LOW);
+  decay = 0;
 
-    TCCR0B = (TCCR0B & 0b11111000) | 0x01;
-    TCCR1B = (TCCR1B & 0b11111000) | 0x01;
-    TCCR2B = (TCCR2B & 0b11111000) | 0x01;
- 
-    delay(1000);
+  pinMode(ACCENT_PIN, OUTPUT);
+  digitalWrite(ACCENT_PIN, LOW);
+  accent = 0;
 
-    // init resonance running avg to avoid sending event at startup
-    resPotRecentAvg = analogRead(RES_POT_PIN);
-    lastResControllerValue = 127 - ((int)resPotRecentAvg >> 3);
+  delay(1000);
 
-    playScale(deviceID);
+  // init resonance running avg to avoid sending event at startup
+  resPotRecentAvg = analogRead(RES_POT_PIN);
+  lastResControllerValue = 127 - ((int)resPotRecentAvg >> 3);
 
-    // calibrate 8V
-    baseNoteFrequency = (108 - 12) * 42;
-    PitchDac.setValue(baseNoteFrequency);
-    
-    // calibrate full cutoff
-    CutoffDac.setValue(32 * 127);
-    cutoff = 127;
+  playScale(deviceID);
 
-    MIDI.setHandleNoteOn(handleNoteOn);
-    MIDI.setHandleNoteOff(handleNoteOff);
-    MIDI.setHandlePitchBend(handlePitchBend);
-    MIDI.setHandleControlChange(handleControlChange);
+  // calibrate 8V
+  baseNoteFrequency = (108 - 12) * 42;
+  PitchDac.setValue(baseNoteFrequency);
 
-    MIDI.setHandleSystemExclusive(handleSystemExclusive);
-    MIDI.setHandleProgramChange(handleProgramChange);
-    
-    MIDI.begin(deviceID);
-    MIDI.turnThruOff();
+  // calibrate full cutoff
+  CutoffDac.setValue(32 * 127);
+  cutoff = 127;
+
+  MIDI.setHandleNoteOn(handleNoteOn);
+  MIDI.setHandleNoteOff(handleNoteOff);
+  MIDI.setHandlePitchBend(handlePitchBend);
+  MIDI.setHandleControlChange(handleControlChange);
+
+  MIDI.setHandleSystemExclusive(handleSystemExclusive);
+  MIDI.setHandleProgramChange(handleProgramChange);
+
+  MIDI.begin(deviceID);
+  MIDI.turnThruOff();
 }
 
 
@@ -342,22 +341,21 @@ void playScale(int channel) {
 
   int note = 60;
 
-  for (int i=0; i<channel; i++) {
+  for (int i = 0; i < channel; i++) {
 
-      handleNoteOn(channel, note, 100);
-      delay(5000);
-      handleNoteOff(channel, note, 100);
-      delay(5000);
-      note++;
+    handleNoteOn(channel, note, 100);
+    delay(5000);
+    handleNoteOff(channel, note, 100);
+    delay(5000);
+    note++;
   }
 
 }
 
-void loop()
-{
+void loop() {
   resPotValue = analogRead(RES_POT_PIN);
   resPotRecentAvg = .2 * (float)resPotValue + .8 * resPotRecentAvg;
-  
+
   resControllerValue = 127 - ((int)resPotRecentAvg >> 3);
 
   if (abs(lastResControllerValue - resControllerValue) > 1) {
@@ -369,4 +367,3 @@ void loop()
 
   MIDI.read();
 }
-
